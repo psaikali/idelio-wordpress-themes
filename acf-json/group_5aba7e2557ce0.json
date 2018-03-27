@@ -1,0 +1,55 @@
+{
+    "key": "group_5aba7e2557ce0",
+    "title": "Sous-titre",
+    "fields": [
+        {
+            "key": "field_5aba7e3a1c7d0",
+            "label": "Sous-titre",
+            "name": "subtitle",
+            "type": "textarea",
+            "instructions": "Un court paragraphe peut être affiché sous le titre de la page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "template-homepage.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1522171695
+}

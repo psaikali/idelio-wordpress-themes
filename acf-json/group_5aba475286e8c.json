@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5aba47a4760af",
-            "label": "Blocs",
+            "label": "Blocs de contenu",
             "name": "blocks",
             "type": "flexible_content",
             "instructions": "",
@@ -637,15 +637,22 @@
                 "operator": "==",
                 "value": "page"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
         ]
     ],
     "menu_order": 20,
     "position": "normal",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1522164263
+    "modified": 1522171850
 }
