@@ -16,16 +16,74 @@
                 "id": ""
             },
             "layouts": {
+                "5aba61774e041": {
+                    "key": "5aba61774e041",
+                    "name": "simple_content",
+                    "label": "Contenu simple",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aba61c8be325",
+                            "label": "Taille",
+                            "name": "content_width",
+                            "type": "select",
+                            "instructions": "Choisissez la largeur sur laquelle doit s'étirer ce contenu.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "20",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "large": "Grande",
+                                "medium": "Moyenne",
+                                "normal": "Normale",
+                                "small": "Étroite"
+                            },
+                            "default_value": [
+                                "normal"
+                            ],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_5aba618a4e042",
+                            "label": "Contenu",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "80",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "5aba47b7e2c11": {
                     "key": "5aba47b7e2c11",
                     "name": "text_and_cards",
-                    "label": "Texte et cartes",
+                    "label": "Texte et mini-blocs",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_5aba47da760b0",
-                            "label": "Texte",
-                            "name": "text",
+                            "label": "Texte d'intro",
+                            "name": "intro_text",
                             "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
@@ -37,8 +95,8 @@
                             },
                             "default_value": "<h2>Ceci est le <strong>titre<\/strong> introduisant le texte ci-dessous<\/h2>\r\n<h3>Paragraphe d'intro aenean lacinia bibendum nulla sed consectetur.<\/h3>\r\n<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo.<\/p>",
                             "tabs": "all",
-                            "toolbar": "full",
-                            "media_upload": 1,
+                            "toolbar": "basic",
+                            "media_upload": 0,
                             "delay": 0
                         },
                         {
@@ -198,9 +256,376 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5aba4fead4c83": {
+                    "key": "5aba4fead4c83",
+                    "name": "featured_pages",
+                    "label": "Pages mises en avant",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aba52da69db7",
+                            "label": "Texte d'intro",
+                            "name": "intro_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "<h2>Ceci est le <strong>titre<\/strong> introduisant le texte ci-dessous<\/h2>\r\n<h3>Paragraphe d'intro aenean lacinia bibendum nulla sed consectetur.<\/h3>",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5aba5090d4c84",
+                            "label": "Pages",
+                            "name": "pages",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "page"
+                            ],
+                            "taxonomy": [],
+                            "filters": [
+                                "search"
+                            ],
+                            "elements": [
+                                "featured_image"
+                            ],
+                            "min": 1,
+                            "max": 6,
+                            "return_format": "id"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aba539ee41e7": {
+                    "key": "5aba539ee41e7",
+                    "name": "pricing_table",
+                    "label": "Tableau de prix",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aba53b0e41e8",
+                            "label": "Texte d'intro",
+                            "name": "intro_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "<h2>Ceci est le <strong>titre<\/strong> introduisant le texte ci-dessous<\/h2>\r\n<h3>Paragraphe d'intro aenean lacinia bibendum nulla sed consectetur.<\/h3>",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5aba544ae41ea",
+                            "label": "Packages",
+                            "name": "plans",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 5,
+                            "layout": "",
+                            "button_label": "Ajouter un package",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5aba5476e41eb",
+                                    "label": "Apparence",
+                                    "name": "featured_plan",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 1,
+                                    "ui_on_text": "Populaire",
+                                    "ui_off_text": "Normal"
+                                },
+                                {
+                                    "key": "field_5aba5512e41ec",
+                                    "label": "Entête",
+                                    "name": "name_and_price",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "<h5><strong>SIM<\/strong> hd<\/h5>\r\n<p>À partir de <strong>49 €<\/strong> HT \/ mois<\/p>",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                },
+                                {
+                                    "key": "field_5aba55bbe41ed",
+                                    "label": "Fonctionnalités",
+                                    "name": "features",
+                                    "type": "repeater",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "collapsed": "field_5aba55f5e41ee",
+                                    "min": 1,
+                                    "max": 0,
+                                    "layout": "table",
+                                    "button_label": "Ajouter une fonctionnalité",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5aba5609e41ef",
+                                            "label": "Incluse",
+                                            "name": "included",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "Incluse ?",
+                                            "default_value": 1,
+                                            "ui": 0,
+                                            "ui_on_text": "",
+                                            "ui_off_text": ""
+                                        },
+                                        {
+                                            "key": "field_5aba55f5e41ee",
+                                            "label": "Nom",
+                                            "name": "name",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_5aba5696e41f0",
+                                    "label": "Bouton",
+                                    "name": "button",
+                                    "type": "group",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "layout": "table",
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_5aba56a4e41f1",
+                                            "label": "Label",
+                                            "name": "label",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "En savoir plus",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_5aba56b1e41f2",
+                                            "label": "Lien",
+                                            "name": "link",
+                                            "type": "url",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "key": "field_5aba5424e41e9",
+                            "label": "Texte sous tableau",
+                            "name": "pricing_table_after_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Donec sed odio dui.<\/p>",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5aba58c71b84a": {
+                    "key": "5aba58c71b84a",
+                    "name": "image_and_text_slider",
+                    "label": "Blocs image et texte",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5aba58c71b84b",
+                            "label": "Texte d'intro",
+                            "name": "intro_text",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "<h2>Ceci est le <strong>titre<\/strong> introduisant le texte ci-dessous<\/h2>\r\n<h3>Paragraphe d'intro aenean lacinia bibendum nulla sed consectetur.<\/h3>",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5aba58c71b84c",
+                            "label": "Blocs",
+                            "name": "slides",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "Ajouter un package",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5aba5e5c1b856",
+                                    "label": "Image",
+                                    "name": "background_image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5aba58c71b84e",
+                                    "label": "Texte",
+                                    "name": "text_content",
+                                    "type": "wysiwyg",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "<h5><strong>Mosaika<\/strong>, prestataire informatique<\/h5>\r\n<blockquote><p>Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas sed diam eget risus varius blandit sit amet non magna.<\/p><\/blockquote>\r\n<p>Donec id elit non mi porta gravida at eget metus. Donec id elit non mi porta gravida at eget metus.<\/p>\r\n<p><a href=\"#\">Lire l'étude de cas complète<\/a><\/p>",
+                                    "tabs": "all",
+                                    "toolbar": "basic",
+                                    "media_upload": 1,
+                                    "delay": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
-            "button_label": "Ajouter un bloc",
+            "button_label": "Ajouter un bloc de contenu",
             "min": "",
             "max": ""
         }
@@ -214,7 +639,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 20,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -222,5 +647,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1522158284
+    "modified": 1522164263
 }
