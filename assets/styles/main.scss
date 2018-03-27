@@ -17,3 +17,29 @@
 @import "layouts/pages";
 @import "layouts/posts";
 @import "layouts/tinymce";
+
+pre.debug-pp {
+	transition: all .5s ease-out;
+	background: #b9e0f5;
+	padding: 1em;
+	margin: 1em 0;
+	position: relative;
+	border-radius: 4px;
+	overflow-x: scroll;
+	text-align: left;
+	
+	code {
+		white-space: inherit;
+	}
+	
+	&:target {
+		height: auto !important;
+		overflow-x: scroll !important;
+		transition: all .5s ease-out;
+	}
+	
+	&.admin {
+		height: 2.5em;
+		overflow: hidden;
+	}
+}
