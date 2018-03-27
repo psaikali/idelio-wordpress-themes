@@ -29,7 +29,8 @@ function setup() {
 	register_nav_menus([
 		'primary_navigation' => __('Nav principale', 'ayiha'),
 		'secondary_navigation' => __('Nav secondaire', 'ayiha'),
-		'utility_navigation_left' => __('Nav utilitaire', 'ayiha'),
+		'utility_navigation' => __('Nav utilitaire', 'ayiha'),
+		'footer_navigation' => __('Nav footer', 'ayiha'),
 	]);
 
 	// Enable post thumbnails

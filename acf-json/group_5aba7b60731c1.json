@@ -1,0 +1,43 @@
+{
+    "key": "group_5aba7b60731c1",
+    "title": "Icône",
+    "fields": [
+        {
+            "key": "field_5aba7b8f4ae17",
+            "label": "Icône",
+            "name": "icon",
+            "type": "text",
+            "instructions": "Indiquez le nom d'une icône de <a href=\"https:\/\/fontawesome.com\/icons?d=gallery&s=regular&m=free\" target=\"_blank\">FontAwesome<\/a> comme \"chart-bar\" ou \"user\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/utility_navigation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1522171172
+}
