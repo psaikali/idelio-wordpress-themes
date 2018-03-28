@@ -3,10 +3,10 @@
     "title": "Introduction",
     "fields": [
         {
-            "key": "field_5aba6cea76156",
-            "label": "Image de fond",
-            "name": "background",
-            "type": "image",
+            "key": "field_5abb9a8f7c0b4",
+            "label": "",
+            "name": "",
+            "type": "message",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,16 +15,9 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "message": "L'image de fond est à définir dans le champ \"Image mise en avant\".",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_5aba7611b78d6",
@@ -227,5 +220,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1522169575
+    "modified": 1522244271
 }

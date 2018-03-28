@@ -39,27 +39,6 @@ function ay_get_page_per_template($template) {
 
 
 /**
- * Get current site slug
- */
-function ay_site_slug($name) {
-	if ($name) {
-		return apply_filters('ay_site_name', 'Ayiha');
-	}
-
-	return apply_filters('ay_site_slug', 'ayiha');
-}
-
-
-
-/**
- * Get image from assets directory
- */
-function ay_asset_image($image = 'ayiha_logo.svg') {
-	return get_template_directory_uri() . '/dist/images/ayiha_logo.svg';
-}
-
-
-/**
  * Debug
  */
 function debug_log($log, $var_dump = false) {
@@ -105,4 +84,25 @@ function pp($arr, $admin = false, $echo = true) {
 	} else {
 		return $output;
 	}
+}
+
+
+/**
+ * Get current site slug
+ */
+function ay_site_slug($name = false) {
+	if ($name) {
+		return apply_filters('ay_site_name', 'Ayiha');
+	}
+
+	return apply_filters('ay_site_slug', 'ayiha');
+}
+
+
+
+/**
+ * Get image from assets directory
+ */
+function ay_asset_image($image = 'ayiha_logo.svg') {
+	return get_template_directory_uri() . '/dist/images/ayiha_logo.svg';
 }
