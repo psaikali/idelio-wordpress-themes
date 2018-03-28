@@ -3,24 +3,53 @@
 /**
  * Page titles
  */
-function ay_title() {
+function ay_page_title() {
 	if (is_home()) {
 		if (get_option('page_for_posts', true)) {
-			return get_the_title(get_option('page_for_posts', true));
+			$title = get_the_title(get_option('page_for_posts', true));
 		} else {
-			return __('Latest Posts', 'ayiha');
+			$title = __('Latest Posts', 'ayiha');
 		}
 	} elseif (is_archive()) {
-		return get_the_archive_title();
+		$title = get_the_archive_title();
 	} elseif (is_search()) {
-		return sprintf(__('Search Results for %s', 'ayiha'), get_search_query());
+		$title = sprintf(__('Recherche de <em>%s</em>', 'ayiha'), get_search_query());
 	} elseif (is_404()) {
-		return __('Not Found', 'ayiha');
+		$title = __('Not Found', 'ayiha');
 	} else {
-		return get_the_title();
+		$title = get_the_title();
+	}
+
+	if ($title) {
+		printf(
+			'<h1>%1$s</h1>',
+			$title
+		);
 	}
 }
 
+
+/**
+ * Page subtitle
+ */
+function ay_page_subtitle() {
+	$subtitle = null;
+
+	if (is_home() || is_archive() || is_category() || is_author()) {
+		if (get_option('page_for_posts', true)) {
+			$subtitle = get_field('subtitle', get_option('page_for_posts', true));
+		}
+	} else {
+		$subtitle = get_field('subtitle');
+	}
+
+	if ($subtitle) {
+		printf(
+			'<p class="subtitle">%1$s</p>',
+			wp_kses_post($subtitle)
+		);
+	}
+}
 
 /**
  * Display icon before menu items
