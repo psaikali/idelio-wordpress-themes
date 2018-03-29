@@ -139,7 +139,7 @@ function ay_pre_footer() {
 function ay_prefooter_change_features_pages_section_title($title) {
 	return sprintf(
 		'<h5>%1$s</h5>',
-		__('Nos autres services', 'ayiha')
+		__('Nos autres <em>services</em>', 'ayiha')
 	);
 }
 
