@@ -121,9 +121,9 @@ function ay_pre_footer() {
 			while (have_rows('blocks', $homepage_id) || !$found) { the_row();
 				if (get_row_layout() == 'featured_pages') {
 					$found = true;
-					add_filter('ay_featured_pages_intro_text', '__return_false');
+					add_filter('ay_featured_pages_intro_text', 'ay_prefooter_change_features_pages_section_title');
 					get_template_part('templates/content-blocks/featured-pages');
-					remove_filter('ay_featured_pages_intro_text', '__return_false');
+					remove_filter('ay_featured_pages_intro_text', 'ay_prefooter_change_features_pages_section_title');
 				}
 			}
 		}
@@ -132,6 +132,16 @@ function ay_pre_footer() {
 	}
 }
 
+
+/**
+ * Pre-footer : change pre-footer featured pages title
+ */
+function ay_prefooter_change_features_pages_section_title($title) {
+	return sprintf(
+		'<h5>%1$s</h5>',
+		__('Nos autres services', 'ayiha')
+	);
+}
 
 /**
  * Replace variables in copyright text
