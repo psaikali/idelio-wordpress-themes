@@ -32,15 +32,19 @@ function ay_page_title() {
 /**
  * Page subtitle
  */
-function ay_page_subtitle() {
+function ay_page_subtitle($post_id = null) {
 	$subtitle = null;
 
-	if (is_home() || is_archive() || is_category() || is_author()) {
-		if (get_option('page_for_posts', true)) {
-			$subtitle = get_field('subtitle', get_option('page_for_posts', true));
+	if (!post_id) {
+		if (is_home() || is_archive() || is_category() || is_author()) {
+			if (get_option('page_for_posts', true)) {
+				$subtitle = get_field('subtitle', get_option('page_for_posts', true));
+			}
+		} else {
+			$subtitle = get_field('subtitle');
 		}
 	} else {
-		$subtitle = get_field('subtitle');
+		$subtitle = get_field('subtitle', $post_id);
 	}
 
 	if ($subtitle) {
@@ -75,16 +79,20 @@ add_filter('wp_nav_menu_objects', 'ay_display_icon_in_menu_items', 10, 2);
 /**
  * Get page background image
  */
-function ay_get_page_background_image() {
-	if (is_home() || is_archive() || is_category() || is_author()) {
-		$image = get_the_post_thumbnail_url(get_option('page_for_posts', true), 'full');
+function ay_get_page_background_image($post_id = null) {
+	if (!post_id) {
+		if (is_home() || is_archive() || is_category() || is_author()) {
+			$image = get_the_post_thumbnail_url(get_option('page_for_posts', true), 'full');
+		} else {
+			$image = get_the_post_thumbnail_url(null, 'full');
+		}
+
+		if (empty($image) || strlen($image) == 0) {
+			return ay_asset_image('default_background.jpg');
+		}
 	} else {
-		$image = get_the_post_thumbnail_url(null, 'full');
+		$image = get_the_post_thumbnail_url($post_id, 'full');
 	}
 
-	if (empty($image) || strlen($image) == 0) {
-		return ay_asset_image('default_background.jpg');
-	}
-
-	return $image;
+	return esc_url($image);
 }

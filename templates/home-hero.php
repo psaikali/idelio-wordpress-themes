@@ -19,7 +19,7 @@ $promo_text = get_field('promo_text');
 						if (have_rows('main_button')) {
 							while (have_rows('main_button')) {
 								the_row(); ?>
-								<a href="<?php echo esc_url(get_sub_field('link')); ?>" class="button first"><?php the_sub_field('label'); ?></a>
+								<a href="<?php echo esc_url(get_sub_field('link')); ?>" class="button plain first"><?php the_sub_field('label'); ?></a>
 							<?php }
 						}
 						if (have_rows('secondary_link')) {
