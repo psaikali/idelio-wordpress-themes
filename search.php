@@ -2,7 +2,7 @@
 
 <?php if (!have_posts()) : ?>
 	<div class="alert alert-warning">
-		<?php _e('Sorry, no results were found.', 'ayiha'); ?>
+		<?php _e('Aucun résultat.', 'ayiha'); ?>
 	</div>
 	<?php get_search_form(); ?>
 <?php endif; ?>

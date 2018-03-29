@@ -8,14 +8,14 @@ function ay_page_title() {
 		if (get_option('page_for_posts', true)) {
 			$title = get_the_title(get_option('page_for_posts', true));
 		} else {
-			$title = __('Latest Posts', 'ayiha');
+			$title = __('Dernières actualités', 'ayiha');
 		}
 	} elseif (is_archive()) {
 		$title = get_the_archive_title();
 	} elseif (is_search()) {
 		$title = sprintf(__('Recherche de <em>%s</em>', 'ayiha'), get_search_query());
 	} elseif (is_404()) {
-		$title = __('Not Found', 'ayiha');
+		$title = __('Page introuvable', 'ayiha');
 	} else {
 		$title = get_the_title();
 	}
