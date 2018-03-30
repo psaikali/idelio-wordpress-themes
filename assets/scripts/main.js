@@ -18,10 +18,14 @@
 		// All pages
 		'common': {
 			init: function() {
-				// JavaScript to be fired on all pages
+				$//('nav.primary-navigation ul.menu > li ul.sub-menu').addClass('loaded').hide();
 			},
 			finalize: function() {
-				// JavaScript to be fired on all pages, after page specific JS is fired
+				$('nav.primary-navigation ul.menu > li').mouseenter(function(){
+					//$(this).addClass('open-sub-menu').find('ul.sub-menu').fadeIn();
+				}).mouseleave(function(){
+					//$(this).removeClass('open-sub-menu').find('ul.sub-menu').fadeOut();
+				});
 			}
 		},
 		// Home page
