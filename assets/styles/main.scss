@@ -189,7 +189,41 @@ a {
 .link {
 	font-weight: bold;
 	color:$orange;
-	text-decoration: underline;
+	position: relative;
+
+	span {
+		position: relative;
+		z-index:10;
+	}
+
+	&:before {
+		z-index:1;
+		@extend %pseudo;
+		position: absolute;
+		bottom:-1px;
+		top:100%;
+		left:0;
+		right:0;
+		background:$orange;
+		border:1px solid transparent;
+		@extend %trans_in;
+	}
+
+	&:hover {
+		color:#fff;
+
+		&:before {
+			top:-.325em;
+			left:-.5em;
+			right:-.5em;
+			bottom:-.325em;
+			//background: rgba($orange, .25);
+			background: transparent;
+			border:1px solid rgba($orange, .5);
+			border-radius:.25rem;
+			@extend %trans_in;
+		}
+	}
 }
 
 ul.bullets {
@@ -568,6 +602,11 @@ ul.bullets {
 		padding-bottom:$w;
 		width:60%;
 
+		@include resp(medium) {
+			padding-left: 5%;
+			width:90%;
+		}
+
 		h1 {
 			font-size: 2.8em;
 		}
@@ -612,11 +651,11 @@ ul.bullets {
 	aside.promo-text {
 		text-align: center;
 		border-top:2px solid $masthead_border_color;
-		padding:1rem 0 1.75rem;
+		padding:.5rem 0 1.25rem;
 		position: relative;
 
 		div.mask {
-			$curve:6rem;
+			$curve:5rem;
 			position: absolute;
 			top:0;
 			bottom:0;
@@ -657,6 +696,13 @@ ul.bullets {
 
 		p {
 			font-size: .75em;
+		}
+
+		a {
+			color:$orange;
+			display: inline-block;
+			margin-left: 1em;
+			@extend .link;
 		}
 	}
 }

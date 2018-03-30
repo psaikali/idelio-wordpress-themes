@@ -21,10 +21,8 @@
 				$//('nav.primary-navigation ul.menu > li ul.sub-menu').addClass('loaded').hide();
 			},
 			finalize: function() {
-				$('nav.primary-navigation ul.menu > li').mouseenter(function(){
-					//$(this).addClass('open-sub-menu').find('ul.sub-menu').fadeIn();
-				}).mouseleave(function(){
-					//$(this).removeClass('open-sub-menu').find('ul.sub-menu').fadeOut();
+				$('.link').each(function(){
+					$(this).html('<span>' + $(this).text() + '</span>');
 				});
 			}
 		},
