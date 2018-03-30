@@ -50,7 +50,7 @@ function ay_page_subtitle($post_id = null) {
 	if ($subtitle) {
 		printf(
 			'<p class="subtitle">%1$s</p>',
-			wp_kses_post($subtitle)
+			wp_kses_post(nl2br($subtitle))
 		);
 	}
 }

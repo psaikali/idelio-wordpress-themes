@@ -261,7 +261,7 @@ ul.bullets {
 //                                                                             
 //=============================================================================
 #utility-bar {
-	$bg-color: #261d28;
+	$bg-color: #491854;
 	$txt-color: #c7a5cd;
 
 	background: $bg-color;
@@ -457,7 +457,7 @@ ul.bullets {
 					}
 				}
 
-				&:hover, &.open-sub-menu {
+				&:hover, &.active {
 					> a {
 						&:before {
 							left:0;
@@ -478,7 +478,16 @@ ul.bullets {
 						@extend %trans_in_delayed;
 						opacity:1;
 					}
+				}
 
+				&.active {
+					> a {
+						font-weight: bold;
+						pointer-events: none;
+					}
+				}
+
+				&:hover, &.open-sub-menu {
 					ul.sub-menu {
 						//display: block;
 						z-index:15;
@@ -503,8 +512,10 @@ ul.bullets {
 					margin-top: 2px;
 					padding:1.5rem 0;
 					border-radius:0 0 .5rem .5rem;
+					box-shadow: 2rem 2rem 5rem -1rem rgba(15, 0, 15, .375);
 
 					&.loaded {
+
 					}
 
 					li {
@@ -520,6 +531,13 @@ ul.bullets {
 							&:hover {
 								opacity:.8;
 								padding-left: 1.95em;
+							}
+						}
+
+						&.active {
+							> a {
+								font-weight: bold;
+								pointer-events: none;
 							}
 						}
 					}
@@ -585,15 +603,15 @@ ul.bullets {
 }
 
 
-//==========================================================================
-//                                                                          
-//  ##   ##   #####   ###    ###  #####  #####     ###     ####    #####  
-//  ##   ##  ##   ##  ## #  # ##  ##     ##  ##   ## ##   ##       ##     
-//  #######  ##   ##  ##  ##  ##  #####  #####   ##   ##  ##  ###  #####  
-//  ##   ##  ##   ##  ##      ##  ##     ##      #######  ##   ##  ##     
-//  ##   ##   #####   ##      ##  #####  ##      ##   ##   ####    #####  
-//                                                                          
-//==========================================================================
+//=================================================================================
+//                                                                                 
+//  ##   ##   #####   ###    ###  #####        ##   ##  #####  #####     #####   
+//  ##   ##  ##   ##  ## #  # ##  ##           ##   ##  ##     ##  ##   ##   ##  
+//  #######  ##   ##  ##  ##  ##  #####        #######  #####  #####    ##   ##  
+//  ##   ##  ##   ##  ##      ##  ##           ##   ##  ##     ##  ##   ##   ##  
+//  ##   ##   #####   ##      ##  #####        ##   ##  #####  ##   ##   #####   
+//                                                                                 
+//=================================================================================
 #hero {
 	div.main-text {
 		$w: 10vw;
@@ -651,7 +669,7 @@ ul.bullets {
 	aside.promo-text {
 		text-align: center;
 		border-top:2px solid $masthead_border_color;
-		padding:.5rem 0 1.25rem;
+		padding:.5rem 0 1.5rem;
 		position: relative;
 
 		div.mask {
@@ -703,6 +721,68 @@ ul.bullets {
 			display: inline-block;
 			margin-left: 1em;
 			@extend .link;
+		}
+	}
+}
+
+
+//==============================================================================
+//                                                                              
+//  #####     ###     ####    #####        ######  ##  ######  ##      #####  
+//  ##  ##   ## ##   ##       ##             ##    ##    ##    ##      ##     
+//  #####   ##   ##  ##  ###  #####          ##    ##    ##    ##      #####  
+//  ##      #######  ##   ##  ##             ##    ##    ##    ##      ##     
+//  ##      ##   ##   ####    #####          ##    ##    ##    ######  #####  
+//                                                                              
+//==============================================================================
+#page-title {
+	div.container {
+		position: relative;
+		padding-top:5rem;
+		padding-bottom:13.5rem;
+	}
+
+	nav.breadcrumbs {
+		font-size: .625em;
+		margin-bottom: .5rem;
+	}
+
+	h1 {
+		font-size: 2em;
+		margin:0;
+	}
+
+	p.subtitle {
+		max-width: 50%;
+	}
+	
+	div.mask {
+		$curve:5rem;
+		position: absolute;
+		height:$curve;
+		background: #fff;
+		left:0;
+		right:0;
+		bottom:0;
+
+		&:after, &:before {
+			@extend %pseudo;
+			width:$curve;
+			position: absolute;
+			top:0;
+			bottom:0;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		}
+
+		&:before {
+			left:-$curve;
+			background-image:url('../images/curve-mask-right.svg');
+		}
+
+		&:after {
+			right:-$curve;
+			background-image:url('../images/curve-mask-left.svg');
 		}
 	}
 }
