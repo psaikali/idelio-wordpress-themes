@@ -66,7 +66,7 @@ function ay_display_icon_in_menu_items($items, $args) {
 		
 		if ($icon) {
 			$item->title = sprintf(
-				'<i class="icon fa-%1$s"></i><span>%2$s</span>',
+				'<i class="icon far fa-%1$s"></i><span>%2$s</span>',
 				$icon,
 				$item->title
 			);

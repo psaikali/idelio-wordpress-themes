@@ -20,7 +20,7 @@
 						<ul class="features">
 							<?php while (have_rows('features')) { the_row(); ?>
 							<li>
-								<i class="icon fa-<?php echo (get_sub_field('included')) ? 'check-circle' : 'times-circle'; ?>"></i>
+								<i class="icon far fa-<?php echo (get_sub_field('included')) ? 'check-circle' : 'times-circle'; ?>"></i>
 								<span><?php echo get_sub_field('name'); ?></span>
 							</li>
 							<?php } ?>
