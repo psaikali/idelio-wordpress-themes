@@ -43,8 +43,8 @@ add_filter('wpseo_metabox_prio', 'ay_change_wpseo_metabox_priority');
  */
 function ay_prefooter_change_features_pages_section_title($title) {
 	return sprintf(
-		'<h5>%1$s</h5>',
-		__('Nos autres <em>services</em>', 'ayiha')
+		'<h5 class="h3">%1$s</h5>',
+		__('Nos autres <strong>services</strong>', 'ayiha')
 	);
 }
 

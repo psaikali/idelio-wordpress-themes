@@ -22,7 +22,7 @@ $logo_alt = sprintf('%1$s - %2$s', get_bloginfo('name'), get_bloginfo('descripti
 			</a>
 		</header>
 
-		<div class="row">
+		<div class="footer-content">
 			<div class="credits">
 				<div class="about">
 					<?php echo get_field('footer_text', 'option'); ?>

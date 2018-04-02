@@ -358,8 +358,8 @@
                             },
                             "collapsed": "",
                             "min": 1,
-                            "max": 5,
-                            "layout": "",
+                            "max": 4,
+                            "layout": "table",
                             "button_label": "Ajouter un package",
                             "sub_fields": [
                                 {
@@ -666,5 +666,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1522655613
+    "modified": 1522663643
 }

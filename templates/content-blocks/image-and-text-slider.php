@@ -1,3 +1,4 @@
+<?php $slides_count = count(get_sub_field('slides')); ?>
 <section class="content-block image-and-text container">
 	<div class="container">
 		<header class="section-title">
@@ -5,12 +6,12 @@
 		</header>
 	</div>
 
-	<div class="slides <?php echo (count(get_field('slides')) > 1) ? 'multiple' : 'single'; ?>">
-		<?php if (have_rows('slides')) {
+	<div class="slides <?php echo ($slides_count > 1) ? 'multiple' : 'single'; ?>">
+		<?php if (have_rows('slides')) { $s = 0;
 			while (have_rows('slides')) { the_row();
 				$background_image = get_sub_field('background_image'); ?>
 
-				<article class="slide">
+				<article class="slide slide-<?php echo ++$s; ?>">
 					<figure class="slide-image <?php echo ($background_image) ? 'has-image' : 'no-image'; ?>">
 					<?php if ($background_image) { ?>
 						<img src="<?php echo esc_url($background_image['url']); ?>" alt="<?php echo esc_attr($background_image['alt']); ?>" />
