@@ -20,6 +20,8 @@ $logo_alt = sprintf('%1$s - %2$s', get_bloginfo('name'), get_bloginfo('descripti
 			<nav class="primary-navigation">
 				<?php if (has_nav_menu('primary_navigation')) { wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu', 'container' => false]); } ?>
 			</nav>
+
+			<span class="trigger-mobile-menu"></span>
 		</div>
 	</header>
 

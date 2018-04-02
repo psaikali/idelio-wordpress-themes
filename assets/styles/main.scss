@@ -69,6 +69,19 @@ $padding:2.5rem;
 //   ####   #####   ##      ##  ##      ##   #####   ##     ##  
 //                                                                
 //================================================================
+body, html {
+	&.no-scroll {
+		overflow: hidden;
+	}
+}
+
+html {
+	width:100%;
+	height:100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
 body {
 	$fs: 15px;
 	font-family: $font;
@@ -76,7 +89,7 @@ body {
 	//margin-top: 9.75rem;
 	color:$text;
 	overflow-x: hidden;
-	overflow-y:auto;
+	overflow-y: auto;
 
 	&#tinymce {
 		margin: 1rem;
@@ -84,6 +97,11 @@ body {
 
 	@include resp(small) {
 		//font-size: $fs*1.25;
+	}
+
+	@include resp(medium) {
+		overflow: hidden;
+		overflow-y: auto;
 	}
 	
 	@include resp(medium-up) {
@@ -283,7 +301,8 @@ blockquote {
 //                                                                             
 //=============================================================================
 #utility-bar {
-	$bg-color: #491854;
+	$bg-color: #37123f;
+	//$bg-color: #261d28;
 	$txt-color: #c7a5cd;
 
 	background: $bg-color;
@@ -292,9 +311,14 @@ blockquote {
 	padding-bottom:.75rem;
 	@extend .clearfix;
 
+	@include resp(large) {
+		padding-top:.625*.5rem;
+		padding-bottom:.75*.5rem;
+	}
+
 	@include resp(small) {
 		padding:0;
-		height:1rem;
+		height:.5rem;
 	}
 
 	&, a { color: $txt-color; }
@@ -316,6 +340,12 @@ blockquote {
 				padding-left:1em;
 				margin-left:1em;
 				line-height: 1;
+
+				@include resp(large) {
+					font-size: .625em;
+					padding-left: .5em;
+					margin-left: .5em;
+				}
 
 				&:before {
 					$w: 2px;
@@ -402,6 +432,10 @@ blockquote {
 		bottom:-$h;
 		z-index:5;
 		background: $masthead_border_color;
+
+		@include resp(medium) {
+			left:0;	
+		}
 	}
 	
 	a.logo {
@@ -410,6 +444,12 @@ blockquote {
 		float:left;
 		position: relative;
 		top: 1.5vw;
+
+		@include resp(medium) {
+			width:30vw;	
+			margin-bottom: 3rem;
+			top:1.25rem;
+		}
 	}
 
 	div.container-fluid {
@@ -422,6 +462,10 @@ blockquote {
 		width: calc(100% - 17.5vw);
 		display: inline-block;
 		float:right;
+
+		@include resp(medium) {
+			display: none;	
+		}
 
 		ul.menu {
 			@extend %list-inline;
@@ -453,11 +497,15 @@ blockquote {
 					margin:0;
 					color:#fff;
 					display: block;
-					padding:1.5em 1.5em 1.25em 1.5em;
+					padding:1em .675em .825em .675em;
 					font-size: .9em;
 					font-weight: 400;
 					overflow: hidden;
 					position: relative;
+
+					@include resp(large-up) {
+						padding:1.5em 1.5em 1.25em 1.5em;
+					}
 
 					&:before {
 						@extend %pseudo;
@@ -608,6 +656,126 @@ blockquote {
 			}
 		}
 	}
+
+	span.trigger-mobile-menu {
+		display: none;
+		position: absolute;
+		z-index:500;
+		top:50%;
+		right:0;
+		padding-left: 2em;
+		margin-top: -1em;
+		cursor: pointer;
+		opacity:.75;
+		@extend %trans_out;
+		border-radius:.25rem;
+		width:2em;
+		height:2em;
+		overflow: hidden;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0.25em;
+			left: 0;
+			width: 1*2em;
+			height: 0.125*2em;
+			border-top: 0.375*2em double #FFF;
+			border-bottom: 0.125*2em solid #FFF;
+		}
+
+		@include resp(medium) {
+			display: block;
+		}
+
+		&:focus, &:hover {
+			opacity:1;
+			@extend %trans_in;
+		}
+	}
+}
+
+
+//=================================================================================================
+//                                                                                                 
+//  ###    ###   #####   #####   ##  ##      #####        ###    ###  #####  ##     ##  ##   ##  
+//  ## #  # ##  ##   ##  ##  ##  ##  ##      ##           ## #  # ##  ##     ####   ##  ##   ##  
+//  ##  ##  ##  ##   ##  #####   ##  ##      #####        ##  ##  ##  #####  ##  ## ##  ##   ##  
+//  ##      ##  ##   ##  ##  ##  ##  ##      ##           ##      ##  ##     ##    ###  ##   ##  
+//  ##      ##   #####   #####   ##  ######  #####        ##      ##  #####  ##     ##   #####   
+//                                                                                                 
+//=================================================================================================
+#mobile-nav {
+	display: block;
+	position: fixed;
+	z-index:500;
+	background: rgba($purple, .95);
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	overflow: hidden;
+	overflow-y: auto;
+	opacity:0;
+	transform: translateX(-100%);
+	@extend %trans_out;
+	padding-top:7.5rem;
+
+	&:before {
+		@extend %pseudo;
+		position: absolute;
+		left:2em;
+		top:2.5rem;
+		content:"Menu";
+		color:#fff;
+		text-transform: uppercase;
+		font-weight: bold;
+		opacity:.5;
+	}
+
+	span.close {
+		color:#fff;
+		position: absolute;
+		top:2.5rem;
+		right:2em;
+	}
+
+	&.open {
+		@extend %trans_in;
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	ul {
+		@extend %list-inline;
+
+		li {
+			display: block;
+
+			a {
+				color:#fff;
+				display: block;
+				padding:1em 2em;
+			}
+
+			&.active {
+				> a {
+					font-weight: bold;
+					background: rgba(#fff, .25);
+				}
+			}
+		}	
+	}
+
+	nav {
+		border-bottom:2px solid rgba(#fff, .25);
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+	}
+	
+	@include resp(medium-up) {
+		display: none;
+	}
 }
 
 
@@ -660,6 +828,15 @@ aside#pre-footer {
 		a.logo {
 			display: block;
 			width:20rem;
+
+			@include resp(large) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			&:hover {
+				opacity:.5;
+			}
 		}
 	}
 
@@ -670,6 +847,11 @@ aside#pre-footer {
 	div.credits {
 		width:60%;
 		float:left;
+
+		@include resp(medium) {
+			width:100%;
+			float:none;
+		}
 
 		div.about {
 			margin-top: 2rem;
@@ -702,7 +884,7 @@ aside#pre-footer {
 						a {
 							color:$orange;
 							display: inline-block;
-							margin-left: 2em;
+							margin-left: 1em;
 
 							&:hover {
 								text-decoration: underline;
@@ -717,7 +899,16 @@ aside#pre-footer {
 	div.widget {
 		width:40%;
 		float:left;
-		text-align: right;
+		margin-top: 2rem;
+
+		@include resp(medium) {
+			width:100%;
+			float:none;
+		}
+
+		@include resp(medium-up) {
+			text-align: right;
+		}
 	}
 }
 
@@ -739,13 +930,17 @@ aside#pre-footer {
 		padding-bottom:$w;
 		width:60%;
 
-		@include resp(medium) {
-			padding-left: 5%;
-			width:90%;
+		@include resp(large) {
+			padding-left:0;
+			width:100%;
 		}
 
 		h1 {
-			font-size: 2.8em;
+			font-size: 2em;
+
+			@include resp(large-up) {
+				font-size: 2.8em;
+			}
 		}
 
 		p {
@@ -756,14 +951,36 @@ aside#pre-footer {
 			color:#fff;
 			margin-top: 3rem;
 
-			a {
-				&.button {
+			@include resp(large-up) {
+				margin-right: -50%;
+			}
 
+			a {
+				vertical-align: middle;
+				
+				&.button {
+					display: inline-block;
+					
+					@include resp(medium) {
+						display: block;
+						width:100%;
+					}
 				}
 
 				&.link {
 					position: relative;
-					top: -1em;
+					display: inline-block;
+					
+					@include resp(medium) {
+						display: block;
+						text-align: center;
+						margin-top: 1.5em;
+					}
+					
+					@include resp(medium-up) {
+						//top: -1em;
+						//padding:1em 0;
+					}
 					
 					&:hover {
 						color:#fff;
@@ -774,8 +991,16 @@ aside#pre-footer {
 
 			span.or {
 				position: relative;
-				top: -1em;
+				display: inline-block;
 				padding:0 1.5em;
+
+				@include resp(medium) {
+					display: none;
+				}
+
+				@include resp(medium-up) {
+					//top: -1em;
+				}
 			}
 		}
 	}
@@ -791,6 +1016,10 @@ aside#pre-footer {
 		padding:.5rem 0 1.5rem;
 		position: relative;
 
+		@include resp(medium) {
+			border-top:none;
+		}
+
 		div.mask {
 			$curve:5rem;
 			position: absolute;
@@ -799,11 +1028,15 @@ aside#pre-footer {
 			width:100%;
 			background:#fff;
 
+			@include resp(medium) {
+				display: none;
+			}
+
 			&:after {
 				@extend %pseudo;
 				position: absolute;
 				top:0;
-				bottom:0;
+				bottom:-1px;
 				width:$curve;
 				background-size: 100% 100%;
 				background-repeat: no-repeat;
@@ -882,7 +1115,7 @@ aside#pre-footer {
 		background: #fff;
 		left:0;
 		right:0;
-		bottom:0;
+		bottom:-1px;
 
 		&:after, &:before {
 			@extend %pseudo;
@@ -895,12 +1128,12 @@ aside#pre-footer {
 		}
 
 		&:before {
-			left:-$curve;
+			left:-$curve*.975;
 			background-image:url('../images/curve-mask-right.svg');
 		}
 
 		&:after {
-			right:-$curve;
+			right:-$curve*.975;
 			background-image:url('../images/curve-mask-left.svg');
 		}
 	}
@@ -917,9 +1150,19 @@ aside#pre-footer {
 //                                                                                                                      
 //======================================================================================================================
 section.content-block {
-	$p:7.5rem;
+	$p:5rem;
 	padding-top:$p;
 	padding-bottom:$p;
+
+	@include resp(medium) {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+	}
+
+	@include resp(large-up) {
+		padding-top:7.5rem;
+		padding-bottom:7.5rem;
+	}
 	
 	&.container {
 		//border-bottom: 1px dotted $border;
@@ -930,6 +1173,10 @@ section.content-block {
 	 */
 	h2, .h2 {
 		font-size: 4rem;
+
+		@include resp(medium) {
+			font-size: 3rem;
+		}
 	}
 
 	h3, .h3 {
@@ -940,6 +1187,10 @@ section.content-block {
 
 		&:after {
 			display: none;
+		}
+
+		@include resp(medium) {
+			font-size:1.5rem;
 		}
 	}
 
@@ -956,20 +1207,40 @@ section.content-block {
 			margin-left:auto;
 			margin-right:auto;
 
-			&.size-small {
-				width:25%;
+			@include resp(medium-up) {
+				&.size-small {
+					width:25*1.75%;
+				}
+
+				&.size-normal {
+					width:40*1.625%;
+				}
+
+				&.size-medium {
+					width:70*1.25%;
+				}
+
+				&.size-large {
+					width:100%;
+				}
 			}
 
-			&.size-normal {
-				width:40%;
-			}
+			@include resp(large-up) {
+				&.size-small {
+					width:25%;
+				}
 
-			&.size-medium {
-				width:70%;
-			}
+				&.size-normal {
+					width:40%;
+				}
 
-			&.size-large {
-				width:100%;
+				&.size-medium {
+					width:70%;
+				}
+
+				&.size-large {
+					width:100%;
+				}
 			}
 		}
 	}
@@ -979,22 +1250,29 @@ section.content-block {
 	 */
 	&.text-cards {
 		div.row {
-			//@extend .autogrid;
-			//@extend .has-gutter-xl;
+			@include resp(large) {
+				width:100%;
+				display: block;
+			}
 
 			div.text {
 				@extend .one-half;
 
 				&.first {
-					@include resp(medium-up) {
+					@include resp(large-up) {
 						padding-right:5rem;
 					}
 				}
 
 				&.second {
-					@include resp(medium-up) {
+					@include resp(large-up) {
 						padding-left:5rem;
 					}
+				}
+
+				@include resp(large) {
+					width:100%;
+					display: block;
 				}
 			}
 
@@ -1002,10 +1280,11 @@ section.content-block {
 				@extend .one-half;
 				$m:2.5;
 				display: flex;
+				@extend .clearfix;
 
-				@include resp(medium) {
-					display: block;
+				@include resp(large) {
 					width:100%;
+					display: block;
 				}
 
 				article.card {
@@ -1022,9 +1301,10 @@ section.content-block {
 					display: flex;
 					flex-direction: column;
 
-					@include resp(medium) {
+					@include resp(large) {
 						display: block;
 						width:100% !important;
+						margin:2rem 0 0 0;
 					}
 
 					figure.icon {
@@ -1036,6 +1316,14 @@ section.content-block {
 						img {
 							width:100%;
 							max-width:1000%;
+						}
+
+						@include resp(large) {
+							width:7.5vw;
+						}
+
+						@include resp(medium) {
+							width:15vw;
 						}
 					}
 
@@ -1135,14 +1423,22 @@ section.content-block {
 					margin:2.5vw 2.5vw 0 2.5vw;
 
 					h4 {
-						font-size: 3rem;
+						font-size: 2vw;
 						margin-top: 0;
+
+						@include resp(medium) {
+							font-size: 4vw;
+						}
 					}
 
 					p {
 						@extend %trans_out;
 						opacity:.75;
-						font-size: 1.625rem;
+						font-size: 1vw;
+
+						@include resp(large) {
+							display: none;
+						}
 					}
 				}
 
@@ -1226,12 +1522,12 @@ section.content-block {
 						margin:2.25vw 2.25vw 0 2.25vw;
 
 						h4 {
-							font-size: 2.5rem;
+							//font-size: 2.5rem;
 						}
 
 						p {
 							opacity:.75;
-							font-size: 1.575rem;
+							//font-size: 1.575rem;
 						}
 					}
 
@@ -1255,12 +1551,12 @@ section.content-block {
 						margin:1.5vw 1.5vw 0 1.5vw;
 
 						h4 {
-							font-size: 2.5rem;
+							//font-size: 2.5rem;
 						}
 
 						p {
 							opacity:.75;
-							font-size: 1.575rem;
+							//font-size: 1.575rem;
 						}
 					}
 
@@ -1268,6 +1564,21 @@ section.content-block {
 						left:1.5vw;
 						bottom:1.5vw;
 						font-size: 1.575rem;
+					}
+				}
+			}
+
+			@include resp(medium) {
+				a.page {
+					width:100% !important;
+
+					div.page-content {
+						height:auto;
+						padding: 2rem 1rem !important;
+
+						header p, footer {
+							display: none;
+						}
 					}
 				}
 			}
@@ -1287,16 +1598,16 @@ section.content-block {
 			$m:1.5;
 			text-align: center;
 			height:100%;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: nowrap;
-			justify-content: space-around;
-			//@extend .clearfix;
+			display: block;
 
-			@include resp(medium-up) {
+			@include resp(large-up) {
 				width:80%;
 				margin-left: auto;
 				margin-right: auto;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				justify-content: space-around;
 			}
 
 			article.plan {
@@ -1310,12 +1621,21 @@ section.content-block {
 				flex-direction: column;
 				//height:100%;
 
+				@include resp(large) {
+					display: block;
+					margin-bottom: 2rem;
+				}
+
 				header {
 					background: url('../images/pricing-pattern.png') darken($bg, 5%);
 					background-position: center center;
 					position: relative;
 					padding:3rem 1rem;
 					margin:.4rem;
+					
+					@include resp(large) {
+						padding:1.5rem .5rem;
+					}
 
 					span.featured-label {
 						position: absolute;
@@ -1354,6 +1674,10 @@ section.content-block {
 					text-align: left;
 					padding:2rem 1rem 2rem 3rem;
 
+					@include resp(large) {
+						padding:1rem .5rem 1rem 1.5rem;
+					}
+
 					li {
 						display: block;
 						font-size: 1.5rem;
@@ -1383,11 +1707,17 @@ section.content-block {
 					margin-left: auto;
 					margin-right: auto;
 					margin-bottom: 2rem;
+
+					@include resp(large) {
+						margin-top: 2rem;
+					}
 				}
 
 				&.featured {
-					margin-top: -1.5rem;
-					margin-bottom: -1.5rem;
+					@include resp(large-up) {
+						margin-top: -1.5rem;
+						margin-bottom: -1.5rem;
+					}
 					
 					header {
 						background: url('../images/pricing-pattern-featured.png') $purple;
@@ -1421,14 +1751,15 @@ section.content-block {
 		}
 
 		footer.after-text {
-			margin-top: 5rem;
+			margin-top: 2.5rem;
 			text-align: center;
 			font-size: 1.375rem;
 
-			@include resp(medium-up) {
+			@include resp(large-up) {
 				width:60%;
 				margin-left: auto;
 				margin-right: auto;
+				margin-top: 5rem;
 			}
 		}
 	}
@@ -1443,20 +1774,29 @@ section.content-block {
 				@extend .clearfix;
 
 				figure.slide-image {
-					width:35%;
-					float:left;
-					margin:0;
+					margin: 0 auto;
+					text-align: center;
+
+					@include resp(large-up) {
+						width:35%;
+						float:left;
+						margin:0;
+					}
 				}
 
 				div.slide-text {
-					width:65%;
-					margin-left: -12.5%;
-					margin-top: 10rem;
-					float:left;
 					background: #fff;
 					border:1px solid $border;
 					border-radius:.25rem;
-					padding: 4rem 6rem;
+					padding:2rem 3rem;
+
+					@include resp(large-up) {
+						width:65%;
+						margin-left: -12.5%;
+						margin-top: 10rem;
+						float:left;
+						padding: 4rem 6rem;
+					}
 
 					> * {
 						width:80%;

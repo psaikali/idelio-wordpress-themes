@@ -21,8 +21,32 @@
 				$//('nav.primary-navigation ul.menu > li ul.sub-menu').addClass('loaded').hide();
 			},
 			finalize: function() {
+				/**
+				 * Simple links
+				 */
 				$('.link').each(function(){
 					$(this).html('<span>' + $(this).text() + '</span>');
+				});
+
+
+				/**
+				 * Mobile nav
+				 */
+				$('<div id="mobile-nav"><span class="close"><i class="icon far fa-times-circle"></i></span></div>').appendTo('body');
+				$mobile_nav = $('#mobile-nav');
+
+				$('.primary-navigation').clone().find('> ul').removeAttr('id').end().appendTo($mobile_nav);
+				$('.secondary-navigation').clone().find('> ul').removeAttr('id').end().appendTo($mobile_nav);
+				$('.utility-navigation').clone().find('> ul').removeAttr('id').end().appendTo($mobile_nav);
+
+				$('.trigger-mobile-menu').click(function(){
+					$('body, html').addClass('no-scroll');
+					$('#mobile-nav').addClass('open');
+				});
+
+				$('#mobile-nav .close').click(function(){
+					$('body, html').removeClass('no-scroll');
+					$('#mobile-nav').removeClass('open');
 				});
 			}
 		},
