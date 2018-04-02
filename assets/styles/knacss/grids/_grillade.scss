@@ -101,7 +101,7 @@ $iefix: 0.01px;
 }
 // sizing individual children
 @media (min-width: $small) {
-  @each $flow, $divider in ("full" "1"), ("one-half" "2"), ("one-third" "3"), ("one-quarter" "4"), ("one-fifth" "5"), ("one-sixth" "6"), ("two-thirds" "3 * 2"), ("three-quarters" "4 * 3"), ("five-sixths" "6 * 5") {
+  @each $flow, $divider in ("full" "1"), ("one-half" "2"), ("one-third" "3"), ("one-quarter" "4"), ("one-fifth" "5"), ("two-fifths" "5 * 2"), ("three-fifths" "5 * 3"), ("four-fifths" "5 * 4"), ("one-sixth" "6"), ("two-thirds" "3 * 2"), ("three-quarters" "4 * 3"), ("five-sixths" "6 * 5") {
     .#{$flow} {
       flex: 0 0 auto;
       width: calc(100% / #{$divider} - #{$iefix});

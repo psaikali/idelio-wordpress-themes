@@ -237,9 +237,9 @@
                         {
                             "key": "field_5aba495c760b8",
                             "label": "Premier contenu",
-                            "name": "text_first",
-                            "type": "true_false",
-                            "instructions": "",
+                            "name": "first_content",
+                            "type": "radio",
+                            "instructions": "Quel contenu afficher en premier dans la colonne de gauche ?",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -247,11 +247,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "Quel contenu afficher en premier dans la colonne de gauche ?",
-                            "default_value": 0,
-                            "ui": 1,
-                            "ui_on_text": "Cartes",
-                            "ui_off_text": "Texte"
+                            "choices": {
+                                "intro_text": "Texte d'intro",
+                                "cards": "Cartes"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
                         }
                     ],
                     "min": "",
@@ -661,5 +666,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1522173346
+    "modified": 1522655613
 }

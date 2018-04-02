@@ -20,13 +20,13 @@ html {
   /* thanks to @guardian, @victorbritopro and @eQRoeil */
   font-size: calc(1em * 0.625);
 
-  @include resp(large) {
+  /*@include resp(large) {
 		font-size:$fs*0.9;
 	}
 
 	@include resp(medium) {
 		font-size:$fs*0.8;
-	}
+	}*/
 }
 
 body {

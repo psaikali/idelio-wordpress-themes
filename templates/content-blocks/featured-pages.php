@@ -10,15 +10,17 @@
 	<?php if ($pages = get_sub_field('pages')) { ?>
 		<div class="pages has-<?php echo count($pages); ?>-pages">
 		<?php foreach ($pages as $page_id) { $page = get_post($page_id); ?>
-			<a href="<?php echo get_permalink($page_id); ?>">
-				<div class="background-image" style="background-image:url('<?php echo ay_get_page_background_image($page_id); ?>');"></div>
-				<header>
-					<h4><?php echo $page->post_title; ?></h4>
-					<?php ay_page_subtitle($page_id); ?>
-				</header>
-				<footer>
-					<span class="link"><?php _e('En savoir plus', 'ayiha'); ?></span>
-				</footer>
+			<a href="<?php echo get_permalink($page_id); ?>" class="page">
+				<div class="page-content">
+					<div class="background-image" style="background-image:url('<?php echo ay_get_page_background_image($page_id); ?>');"></div>
+					<header>
+						<h4><?php echo $page->post_title; ?></h4>
+						<?php echo wpautop($page->post_excerpt); ?>
+					</header>
+					<footer>
+						<span class="link"><?php _e('En savoir plus', 'ayiha'); ?></span>
+					</footer>
+				</div>
 			</a>
 		<?php } ?>
 		</div>

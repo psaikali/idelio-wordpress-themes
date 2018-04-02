@@ -121,6 +121,11 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: -0.01em;
 	line-height: 1.2;
 	position: relative;
+
+	strong {
+		color:$orange;
+		font-weight: 400;
+	}
 }
 
 h1, h2, h3, h4 {
@@ -784,5 +789,366 @@ ul.bullets {
 			right:-$curve;
 			background-image:url('../images/curve-mask-left.svg');
 		}
+	}
+}
+
+
+//======================================================================================================================
+//                                                                                                                      
+//   ####   #####   ##     ##  ######  #####  ##     ##  ######        #####   ##       #####    ####  ##  ##   ####  
+//  ##     ##   ##  ####   ##    ##    ##     ####   ##    ##          ##  ##  ##      ##   ##  ##     ## ##   ##     
+//  ##     ##   ##  ##  ## ##    ##    #####  ##  ## ##    ##          #####   ##      ##   ##  ##     ####     ###   
+//  ##     ##   ##  ##    ###    ##    ##     ##    ###    ##          ##  ##  ##      ##   ##  ##     ## ##      ##  
+//   ####   #####   ##     ##    ##    #####  ##     ##    ##          #####   ######   #####    ####  ##  ##  ####   
+//                                                                                                                      
+//======================================================================================================================
+section.content-block {
+	$p:7.5rem;
+	padding-top:$p;
+	padding-bottom:$p;
+	
+	&.container {
+		//border-bottom: 1px dotted $border;
+	}
+
+	/**
+	 * Title and subtitle
+	 */
+	h2 {
+		font-size: 4rem;
+	}
+
+	h3 {
+		font-size: 2rem;
+		font-weight: normal;
+		font-family: $font;
+		font-weight: 500;
+
+		&:after {
+			display: none;
+		}
+	}
+
+	header.section-title {
+		text-align: center;
+	}
+
+	/**
+	 * Simple content
+	 */
+	&.simple-content {
+		div.content-width {
+			margin-left:auto;
+			margin-right:auto;
+
+			&.size-small {
+				width:25%;
+			}
+
+			&.size-normal {
+				width:40%;
+			}
+
+			&.size-medium {
+				width:70%;
+			}
+
+			&.size-large {
+				width:100%;
+			}
+		}
+	}
+
+	/**
+	 * Text and cards
+	 */
+	&.text-cards {
+		div.row {
+			//@extend .autogrid;
+			//@extend .has-gutter-xl;
+
+			div.text {
+				@extend .one-half;
+
+				&.first {
+					@include resp(medium-up) {
+						padding-right:5rem;
+					}
+				}
+
+				&.second {
+					@include resp(medium-up) {
+						padding-left:5rem;
+					}
+				}
+			}
+
+			div.cards {
+				@extend .one-half;
+				$m:2.5;
+				display: flex;
+
+				@include resp(medium) {
+					display: block;
+					width:100%;
+				}
+
+				article.card {
+					//float:left;
+					margin:0 $m*1%;
+					padding:1rem 2rem 3rem;
+					box-shadow: 0rem 1rem 5rem -1rem rgba(0,0,20, .25), 0rem 1rem 2.5rem -0.75rem rgba(10,0,20, .25);
+					text-align: center;
+					border-radius:.25rem;
+					-webkit-hyphens: auto;
+					-moz-hyphens: auto;
+					-ms-hyphens: auto;
+					hyphens: auto;
+					display: flex;
+					flex-direction: column;
+
+					@include resp(medium) {
+						display: block;
+						width:100% !important;
+					}
+
+					figure.icon {
+						width:35%;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: 2rem;
+
+						img {
+							width:100%;
+							max-width:1000%;
+						}
+					}
+
+					div.card-content {
+						margin-bottom: 1rem;
+
+						h4 {
+							font-size: 1.6rem;
+							margin-bottom: auto;
+						}
+
+						p {
+							font-size: 1.5rem;
+							line-height: 1.2;
+						}
+					}
+
+					a.link {
+						font-size: 1.375rem;
+						display: inline-block;
+						align-self: self-start;
+    					margin-top: auto;
+    					margin-left: auto;
+    					margin-right: auto;
+
+						&:hover {
+							color:$orange;
+						}
+					}
+				}
+
+				&.has-4-cards {
+					article.card {
+						width:((100/4)-($m*2))*1%;
+					}
+				}
+
+				&.has-3-cards {
+					article.card {
+						width:((100/3)-($m*2))*1%;
+					}
+				}
+
+				&.has-2-cards {
+					article.card {
+						width:((100/2)-($m*2))*1%;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Featured pages
+	 */
+	&.featured-pages {
+		div.pages {
+			margin-left:-1px;
+			margin-right:-1px;
+			margin-top: 4rem;
+			@extend .clearfix;
+
+			a.page {
+				position: relative;
+				display: block;
+				float:left;
+				color:#fff;
+				
+				div.page-content {
+					position: relative;
+					height:0;
+					width: calc(100% - 2px);
+					margin-left: 1px;
+					overflow: hidden;
+					padding-bottom: 25%;
+					background: $purple;
+				}
+
+				div.background-image {
+					position: absolute;
+					top:0;
+					bottom:0;
+					left:0;
+					right:0;
+					background-color: $purple;
+					background-size: cover;
+					background-position: center center;
+					z-index:1;
+					@extend %trans_out;
+				}
+
+				header {
+					position: relative;
+					z-index:10;
+					margin:2.5vw 2.5vw 0 2.5vw;
+
+					h4 {
+						font-size: 3rem;
+						margin-top: 0;
+					}
+
+					p {
+						@extend %trans_out;
+						opacity:.75;
+						font-size: 1.625rem;
+					}
+				}
+
+				footer {
+					position: absolute;
+					z-index:10;
+					left:2.5vw;
+					bottom:2.5vw;
+					font-size: 1.625rem;
+					@extend %trans_out;
+					opacity:0;
+					transform: translateY(4em);
+				}
+
+				&:hover {
+					div.background-image {
+						$o:-1.5rem;
+						@extend %trans_in;
+						left:$o;
+						right:$o;
+						bottom:$o;
+						top:$o;
+						transform:rotate(-1deg);
+						opacity:.5;
+					}
+
+					header {
+						p {
+							opacity:0;
+							@extend %trans_in;
+						}
+					}
+
+					footer {
+						opacity:1;
+						transform: translateY(0);
+						@extend %trans_in_delayed;
+					}
+				}
+			}	
+
+			&.has-2-pages {
+				a.page {
+					width: 50%;
+					
+					div.page-content {
+						padding-bottom: 40%;
+					}
+				}
+			}
+
+			&.has-3-pages {
+				a.page {
+					width: 33.333%;
+					
+					div.page-content {
+						padding-bottom: 60%;
+					}
+				}
+			}
+
+			&.has-4-pages {
+				a.page {
+					width: 25%;
+					
+					div.page-content {
+						padding-bottom: 80%;
+					}
+				}
+			}
+
+			&.has-5-pages {
+				a.page {
+					width: 20%;
+					
+					div.page-content {
+						padding-bottom: 100%;
+					}
+				}
+			}
+
+			&.has-6-pages {
+				a.page {
+					width: 16.66%;
+					
+					div.page-content {
+						padding-bottom: 100%;
+					}
+
+					header {
+						margin:1.5vw 1.5vw 0 1.5vw;
+
+						h4 {
+							font-size: 2.5rem;
+						}
+
+						p {
+							opacity:.75;
+							font-size: 1.575rem;
+						}
+					}
+
+					footer {
+						left:1.5vw;
+						bottom:1.5vw;
+						font-size: 1.575rem;
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Pricing table
+	 */
+	&.pricing-table {
+		
+	}
+
+	/**
+	 * Image and text (could be slider)
+	 */
+	&.image-and-text {
+		
 	}
 }
