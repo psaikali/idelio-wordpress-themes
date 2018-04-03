@@ -24,7 +24,7 @@ add_filter('body_class', 'ay_body_class');
  * Clean up the_excerpt()
  */
 function ay_excerpt_more() {
-	return ' &hellip; <a href="' . get_permalink() . '">' . __('Lire la suite', 'ayiha') . '</a>';
+	return ' &hellip; <br><a class="link read-more" href="' . get_permalink() . '">' . __('Lire la suite', 'ayiha') . '</a>';
 }
 add_filter('excerpt_more', 'ay_excerpt_more');
 

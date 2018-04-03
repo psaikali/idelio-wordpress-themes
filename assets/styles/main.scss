@@ -1944,3 +1944,60 @@ section.content-block {
 		}
 	}
 }
+
+
+//======================================
+//                                      
+//  #####   ##       #####    ####    
+//  ##  ##  ##      ##   ##  ##       
+//  #####   ##      ##   ##  ##  ###  
+//  ##  ##  ##      ##   ##  ##   ##  
+//  #####   ######   #####    ####    
+//                                      
+//======================================
+body.blog, body.single, body.archive {
+	article.post {
+		margin-bottom: 4rem;
+
+		header {
+			h2.entry-title {
+				margin:0 0 .1em;
+
+				a {
+					&:hover {
+						color:$orange;
+					}
+				}
+			}
+
+			div.meta {
+				margin-bottom: 2rem;
+
+				p {
+					font-style: italic;
+					font-size: 1.25rem;
+					opacity:.75;
+				}
+			}	
+		}
+
+		div.entry-summary, div.entry-content {
+			@include resp(medium-up) {
+				width:60%;
+			}
+		}
+
+		div.entry-summary {
+			p {
+				a.link {
+					display: inline-block;
+					margin-top: 1em;
+
+					&:hover {
+						color:$orange;
+					}
+				}
+			}
+		}
+	}
+}
