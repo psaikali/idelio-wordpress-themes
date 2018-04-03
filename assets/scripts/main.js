@@ -32,7 +32,7 @@
 				/**
 				 * Mobile nav
 				 */
-				$('<div id="mobile-nav"><span class="close"><i class="icon far fa-times-circle"></i></span></div>').appendTo('body');
+				$('<div id="mobile-nav"><span class="close"><i class="icon fas fa-times-circle"></i></span></div>').appendTo('body');
 				$mobile_nav = $('#mobile-nav');
 
 				$('.primary-navigation').clone().find('> ul').removeAttr('id').end().appendTo($mobile_nav);
@@ -47,6 +47,20 @@
 				$('#mobile-nav .close').click(function(){
 					$('body, html').removeClass('no-scroll');
 					$('#mobile-nav').removeClass('open');
+				});
+
+
+				/**
+				 * Image and text sliders
+				 */
+				$('.slides.multiple').each(function(){
+					$arrows = $(this).parent().find('nav.arrows');
+
+					$(this).slick({
+						'appendArrows' : $arrows,
+						'prevArrow' : '<i class="prev icon fas fa-angle-left"></i>',
+						'nextArrow' : '<i class="next icon fas fa-angle-right"></i>'
+					});
 				});
 			}
 		},

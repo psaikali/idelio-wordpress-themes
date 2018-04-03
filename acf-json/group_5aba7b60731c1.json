@@ -7,7 +7,7 @@
             "label": "Icône",
             "name": "icon",
             "type": "text",
-            "instructions": "Indiquez le nom d'une icône de <a href=\"https:\/\/fontawesome.com\/icons?d=gallery&s=regular&m=free\" target=\"_blank\">FontAwesome<\/a> comme \"chart-bar\" ou \"user\"",
+            "instructions": "Indiquez le nom d'une icône de <a href=\"https:\/\/fontawesome.com\/icons?d=gallery&s=solid&m=free\" target=\"_blank\">FontAwesome<\/a> comme \"chart-bar\" ou \"user\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -39,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1522241323
+    "modified": 1522745461
 }

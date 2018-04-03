@@ -104,5 +104,5 @@ function ay_site_slug($name = false) {
  * Get image from assets directory
  */
 function ay_asset_image($image = 'ayiha_logo.svg') {
-	return get_template_directory_uri() . '/dist/images/ayiha_logo.svg';
+	return get_template_directory_uri() . '/dist/images/' . $image;
 }

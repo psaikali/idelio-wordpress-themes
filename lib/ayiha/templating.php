@@ -36,6 +36,8 @@ function ay_page_subtitle($post_id = null) {
 	$subtitle = null;
 
 	if (!$post_id) {
+		if (is_search() || is_404()) return;
+		
 		if (is_home() || is_archive() || is_category() || is_author()) {
 			if (get_option('page_for_posts', true)) {
 				$subtitle = get_field('subtitle', get_option('page_for_posts', true));

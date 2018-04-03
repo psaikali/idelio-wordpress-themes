@@ -20,7 +20,7 @@
 						<ul class="features">
 							<?php while (have_rows('features')) { the_row(); ?>
 							<li>
-								<i class="icon far fa-<?php echo (get_sub_field('included')) ? 'check-circle yes' : 'times-circle no'; ?>"></i>
+								<i class="icon fas fa-<?php echo (get_sub_field('included')) ? 'check-circle yes' : 'times-circle no'; ?>"></i>
 								<span><?php echo get_sub_field('name'); ?></span>
 							</li>
 							<?php } ?>
@@ -28,9 +28,11 @@
 						<?php }
 						
 						if (have_rows('button')) {
-							while (have_rows('button')) { the_row(); ?>
+							while (have_rows('button')) { the_row(); 
+								if (get_sub_field('link') != '') { ?>
 								<a href="<?php echo esc_url(get_sub_field('link')); ?>" class="button"><?php echo get_sub_field('label'); ?></a>
 							<?php }
+							}
 						} ?>
 					</article>
 				<?php } ?>

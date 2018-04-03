@@ -12,6 +12,7 @@
 @import "_mixins.scss";
 @import "_fonts.scss";
 @import "knacss/knacss.scss";
+@import "_slick.scss";
 //@import "_featherlight.scss";
 
 $orange: #ffad30;
@@ -411,6 +412,7 @@ blockquote {
 //=====================================================
 #intro {
 	color:#fff;
+	background-color: $purple;
 	background-position: center center;
 	background-size: cover;
 }
@@ -758,6 +760,11 @@ blockquote {
 				padding:1em 2em;
 			}
 
+			i.icon {
+				display: inline-block;
+				margin-right: .5em;
+			}
+
 			&.active {
 				> a {
 					font-weight: bold;
@@ -875,7 +882,16 @@ aside#pre-footer {
 			}
 
 			nav.footer-navigation {
-				display: inline-block;
+				display: block;
+
+				@include resp(medium) {
+					margin-top: 1rem;
+				}
+
+				@include resp(medium-up) {
+					display: inline-block;
+					margin-top: 0;
+				}
 
 				ul {
 					@extend %list-inline;
@@ -888,6 +904,14 @@ aside#pre-footer {
 
 							&:hover {
 								text-decoration: underline;
+							}
+						}
+
+						@include resp(medium) {
+							&:first-child {
+								a {
+									margin-left: 0;
+								}
 							}
 						}
 					}
@@ -1092,11 +1116,33 @@ aside#pre-footer {
 		position: relative;
 		padding-top:5rem;
 		padding-bottom:13.5rem;
+
+		@include resp(medium) {
+			padding-top:3rem;
+			padding-bottom:5rem;
+		}
 	}
 
 	nav.breadcrumbs {
 		font-size: .625em;
 		margin-bottom: .5rem;
+		color:#fff;
+
+		a {
+			color:#fff;
+
+			&:hover {
+				color:$orange;
+			}
+		}
+
+		i {
+			&.fa-angle-right {
+				display: inline-block;
+				padding:0 .5em;
+				opacity:.5;
+			}
+		}
 	}
 
 	h1 {
@@ -1105,7 +1151,9 @@ aside#pre-footer {
 	}
 
 	p.subtitle {
-		max-width: 50%;
+		@include resp(medium-up) {
+			max-width: 50%;
+		}
 	}
 	
 	div.mask {
@@ -1116,6 +1164,10 @@ aside#pre-footer {
 		left:0;
 		right:0;
 		bottom:-1px;
+
+		@include resp(medium) {
+			display: none;
+		}
 
 		&:after, &:before {
 			@extend %pseudo;
@@ -1265,6 +1317,10 @@ section.content-block {
 				}
 
 				&.second {
+					@include resp(large) {
+						margin-top: 2rem;
+					}
+
 					@include resp(large-up) {
 						padding-left:5rem;
 					}
@@ -1732,6 +1788,10 @@ section.content-block {
 			}
 			
 			&.has-2-plans {
+				@include resp(large-up) {
+					width:60%;
+				}
+
 				article.plan {
 					flex-basis:(100/2)*.9%;
 				}
@@ -1768,14 +1828,61 @@ section.content-block {
 	 * Image and text (could be slider)
 	 */
 	&.image-and-text {
+		div.slider-container {
+			position: relative;
+		}
+
+		nav.arrows {
+			position: absolute;
+			z-index:1500;
+			top:2rem;
+			right:50%;
+			margin-right: -5.5rem;
+
+			@include resp(large-up) {
+				right:12.5%;
+				top: 3.5rem;
+				margin-right: 0;
+			}
+
+			i.icon {
+				$w:5rem;
+				color:$orange;
+				border-radius:100%;
+				border:1px solid $orange;
+				text-align: center;
+				height:$w;
+				width:$w;
+				line-height: $w;
+				font-size: $w/1.5;
+				cursor: pointer;
+				@extend %trans_out;
+
+				&.prev {
+					margin-right: .25em;
+				}
+
+				&:hover {
+					@extend %trans_in;
+					color:$purple;
+					border-color:$purple;
+				}
+			}
+		}
+
 		div.slides {
 			article.slide {
-				display: none;
+				//display: none;
 				@extend .clearfix;
+				outline: none;
 
 				figure.slide-image {
 					margin: 0 auto;
 					text-align: center;
+
+					img {
+						margin:0 auto;
+					}
 
 					@include resp(large-up) {
 						width:35%;
@@ -1796,15 +1903,19 @@ section.content-block {
 						margin-top: 10rem;
 						float:left;
 						padding: 4rem 6rem;
-					}
 
-					> * {
-						width:80%;
+						> * {
+							width:80%;
+						}
 					}
 
 					h5 {
 						font-size: 3.5rem;
 						width:100%;
+
+						@include resp(large) {
+							font-size: 2.5rem;
+						}
 					}
 
 					blockquote {

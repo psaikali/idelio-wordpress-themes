@@ -101,9 +101,10 @@ function display_sidebar() {
 function assets() {
 	wp_enqueue_style('google/fonts', 'https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700|Palanquin+Dark', false, null);
 	wp_enqueue_style('fa/font-base', 'https://use.fontawesome.com/releases/v5.0.9/css/fontawesome.css', false, null);
-	wp_enqueue_style('fa/font-set', 'https://use.fontawesome.com/releases/v5.0.9/css/regular.css', false, null);
-	wp_enqueue_style('ayiha/css', Assets\asset_path('styles/main.css'), false, null);
+	wp_enqueue_style('fa/font-set', 'https://use.fontawesome.com/releases/v5.0.9/css/solid.css', false, null);
+	wp_enqueue_style('ayiha/css', Assets\asset_path('styles/main.css?v=' . 1), false, null);
 
+	wp_enqueue_script('slick/slider', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], null, true);
 	wp_enqueue_script('ayiha/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
