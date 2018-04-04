@@ -415,6 +415,12 @@ blockquote {
 	background-color: $purple;
 	background-position: center center;
 	background-size: cover;
+
+	&.default-background {
+		background: url('../images/default-pattern.png') repeat $purple;
+		background-image: url('../images/default-pattern.png');
+		background-image: url('../images/default-pattern.png'), linear-gradient(75deg, darken($purple, 15%), $purple);
+	}
 }
 
 #masthead {
@@ -1997,6 +2003,156 @@ body.blog, body.single, body.archive {
 						color:$orange;
 					}
 				}
+			}
+		}
+	}
+}
+
+
+//================================================
+//                                                
+//  #####   #####   #####    ###    ###   ####  
+//  ##     ##   ##  ##  ##   ## #  # ##  ##     
+//  #####  ##   ##  #####    ##  ##  ##   ###   
+//  ##     ##   ##  ##  ##   ##      ##     ##  
+//  ##      #####   ##   ##  ##      ##  ####   
+//                                                
+//================================================
+form {
+	input, select, textarea {
+		display: block;
+		border:none;
+		border:1px solid $border;
+		margin: 0 0 1rem 0;
+		padding:1rem;
+		width:100%;
+		border-radius:.5rem;
+		background:lighten($border, 16.5%);
+		@extend %trans_out;
+
+		&:focus:not(.button) {
+			outline:none;
+			border-color:$purple;
+			@extend %trans_in;
+		}
+	}
+
+	input[type=submit] {
+		@extend .button;
+		cursor: pointer;
+	}
+
+	.button {
+		margin-top:1.5rem;
+
+		&:focus {
+			outline: none;		
+		}
+	}
+
+	textarea {
+		//background:lighten($border, 15%);
+		//border:none;
+	}
+
+	div.inputs {
+		@extend .clearfix;
+
+		@include resp(medium-up) {
+			div.input {
+				&.half {
+					width:47.5%;
+					float:left;
+				}
+
+				&.half + .half {
+					margin-left: 5%;
+				}
+			}
+		}
+	}
+
+	&.wpcf7-form {
+		margin-top:-1.75rem;
+
+		br {
+			display: none;
+		}
+		
+		span.wpcf7-form-control-wrap {
+			display: block;
+		}
+
+		div.inputs {
+			@extend .clearfix;
+		}
+
+		div.input {
+			position: relative;
+			padding-top:1.75rem;
+
+			label {
+				text-transform: uppercase;
+				font-size:1.25rem;
+				color:$gray;
+				top:0;
+				margin:0;
+				@extend %trans_out;
+
+				&.visible {
+					position: relative;
+					top:auto;
+					//left:auto;
+					opacity:1;
+				}
+			}
+
+			&.focus {
+				label {
+					@extend %trans_in;
+					opacity:1;
+					top:.5rem;
+				}
+			}
+
+			&.user-name {
+				width:45%;
+				float:left;
+				margin-right:10%;
+			}
+
+			&.email {
+				width:45%;
+				float:left;
+			}
+
+			span.wpcf7-not-valid-tip {
+				color:rgba(#fff, .9);
+				background:rgb(235, 0, 59);
+				border-radius:4px;
+				padding:.5rem 1rem;
+				font-size:1.25rem;
+				display: block;
+				position: relative;
+				top:-1em;
+				font-style: italic;
+			}
+		}
+
+		div.wpcf7-response-output {
+			display: none;
+			margin:0 0 1rem 0;
+			color:rgba(#fff, .9);
+			border:none;
+			background:rgb(235, 0, 59);
+			width:100%;
+			border-radius:4px;
+			padding:.5rem 1rem;
+			font-size:1.25rem;
+			font-style: italic;
+
+			&.wpcf7-mail-sent-ok {
+				background:#23b370;
 			}
 		}
 	}

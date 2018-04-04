@@ -3,10 +3,12 @@
 $logo_data = get_field('main_logo', 'option');
 $logo = (isset($logo_data['url'])) ? $logo_data['url'] : null;
 $logo_alt = sprintf('%1$s - %2$s', get_bloginfo('name'), get_bloginfo('description'));
+$bg_image = ay_get_page_background_image(null, false);
+$style_attr = $bg_image ? sprintf('style="background-image:url(\'%1$s\');"', $bg_image) : 'class="default-background"';
 
 ?>
 
-<section id="intro" style="background-image:url('<?php echo ay_get_page_background_image(); ?>');">
+<section id="intro" <?php echo $style_attr; ?>>
 	<header id="masthead">
 		<div class="container-fluid">
 			<a class="logo" href="<?= esc_url(home_url('/')); ?>">

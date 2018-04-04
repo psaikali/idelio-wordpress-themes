@@ -58,6 +58,8 @@
 
 					$(this).slick({
 						'appendArrows' : $arrows,
+						'autoplay' : true,
+						'autoplaySpeed' : 7500,
 						'prevArrow' : '<i class="prev icon fas fa-angle-left"></i>',
 						'nextArrow' : '<i class="next icon fas fa-angle-right"></i>'
 					});

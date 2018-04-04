@@ -61,7 +61,7 @@ function ay_page_subtitle($post_id = null) {
 /**
  * Get page background image
  */
-function ay_get_page_background_image($post_id = null) {
+function ay_get_page_background_image($post_id = null, $return_if_none = true) {
 	if (!$post_id) {
 		if (is_home() || is_archive() || is_category() || is_author()) {
 			$image = get_the_post_thumbnail_url(get_option('page_for_posts', true), 'full');
@@ -70,7 +70,7 @@ function ay_get_page_background_image($post_id = null) {
 		}
 
 		if (empty($image) || strlen($image) == 0) {
-			return ay_asset_image('default_background.jpg');
+			return ($return_if_none) ? ay_asset_image('default_background.jpg') : false;
 		}
 	} else {
 		$image = get_the_post_thumbnail_url($post_id, 'full');
