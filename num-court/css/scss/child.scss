@@ -1,0 +1,608 @@
+@import "breakpoints";
+@import "mixins";
+
+//=============================================================
+//                                                             
+//  ##  ###    ###  #####    #####   #####    ######   ####  
+//  ##  ## #  # ##  ##  ##  ##   ##  ##  ##     ##    ##     
+//  ##  ##  ##  ##  #####   ##   ##  #####      ##     ###   
+//  ##  ##      ##  ##      ##   ##  ##  ##     ##       ##  
+//  ##  ##      ##  ##       #####   ##   ##    ##    ####   
+//                                                             
+//=============================================================
+$orange: #eaea7b;
+.orange { color:$orange; }
+$yellow: $orange;
+
+$purple: #1ba4bd;
+.purple { color:$purple; }
+$green: $purple;
+
+$dark_blue: #001572;
+
+$masthead_border_color:rgba(desaturate(lighten($purple, 25%), 25%), .75);
+
+$padding:2.5rem;
+
+::-moz-selection { background: rgba($orange, .625); }
+::selection { background: rgba($orange, .625); }
+
+body.numero-court {
+
+	//================================================================
+	//                                                                
+	//   ####   #####   ###    ###  ###    ###   #####   ##     ##  
+	//  ##     ##   ##  ## #  # ##  ## #  # ##  ##   ##  ####   ##  
+	//  ##     ##   ##  ##  ##  ##  ##  ##  ##  ##   ##  ##  ## ##  
+	//  ##     ##   ##  ##      ##  ##      ##  ##   ##  ##    ###  
+	//   ####   #####   ##      ##  ##      ##   #####   ##     ##  
+	//                                                                
+	//================================================================
+	h1, h2, h3, h4, h5, h6 {
+		strong {
+			color:$purple;
+		}
+	}
+
+	h1, h2, h3, h4 {
+		&:after {
+			color:$orange;
+		}
+	}
+
+	.button {
+		background:$orange;
+		border:2px solid $orange;
+		color:$dark_blue;
+		font-weight: bold;
+
+		&:hover, &.transparent {
+			background:#fff;
+			color:$orange;
+		}
+
+		&.transparent {
+			&:hover {
+				background:$orange;
+				color:#fff;
+			}
+		}
+
+		&.white {
+			background:#fff;
+			color:$orange;
+			border-color:#fff;
+
+			&:hover {
+				background:$orange;
+				border-color:$orange;
+				color:#fff;
+			}
+		}
+	}
+
+	.link {
+		color:$purple;
+
+		&:before {
+			background:$green;
+		}
+
+		&:hover {
+			color:#fff;
+
+			&:before {
+				border:1px solid rgba($orange, .5);
+			}
+		}
+	}
+
+	ul.bullets {
+		li {
+			&:before {
+				background:$orange;
+			}
+		}
+	}
+
+	//=============================================================================
+	//                                                                             
+	//   ####  ##   ##  #####   ##   ##  #####    ###    ####    #####  #####    
+	//  ##     ##   ##  ##  ##  ##   ##  ##      ## ##   ##  ##  ##     ##  ##   
+	//   ###   ##   ##  #####   #######  #####  ##   ##  ##  ##  #####  #####    
+	//     ##  ##   ##  ##  ##  ##   ##  ##     #######  ##  ##  ##     ##  ##   
+	//  ####    #####   #####   ##   ##  #####  ##   ##  ####    #####  ##   ##  
+	//                                                                             
+	//=============================================================================
+	#utility-bar {
+		$bg-color: #0a2e6f;
+		$txt-color: #bef5f4;
+
+		background: $bg-color;
+		background-image: linear-gradient(75deg, darken($green, 20%), darken($green, 5%));
+
+		&, a { color: $txt-color; }
+
+		nav {
+			ul {
+				li {
+					&:before {
+						background-color: rgba($txt-color, .6);
+					}
+
+					a {
+						&:hover {
+							color:#fff;
+						}
+
+						.icon {
+							color:#fff;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=====================================================
+	//                                                     
+	//  ##   ##  #####    ###    ####    #####  #####    
+	//  ##   ##  ##      ## ##   ##  ##  ##     ##  ##   
+	//  #######  #####  ##   ##  ##  ##  #####  #####    
+	//  ##   ##  ##     #######  ##  ##  ##     ##  ##   
+	//  ##   ##  #####  ##   ##  ####    #####  ##   ##  
+	//                                                     
+	//=====================================================
+	#intro {
+		color:#fff;
+		background-color: $purple;
+
+		&.default-background {
+			background: url('../images/default-pattern.png') repeat $purple;
+			background-image: url('../images/default-pattern.png');
+			background-image: url('../images/default-pattern.png'), linear-gradient(90deg, $green, #2cd4be);
+		}
+	}
+
+	#masthead {
+		$w: 17vw;
+
+		&:after {
+			$h: 2px;
+			height:$h;
+			left:$w*1.25;
+			bottom:-$h;
+			background: $masthead_border_color;
+		}
+		
+		a.logo {
+			width:$w;
+			top: 2.5rem;
+
+			@include resp(medium) {
+				width:30vw;	
+				margin-bottom: 3rem;
+				top:1rem;
+			}
+		}
+		
+		nav.primary-navigation {
+			ul.menu {
+				> li {
+					&:after {
+						background:$orange;
+					}
+
+					a {
+						color:#fff;
+
+						&:before {
+							background:linear-gradient(180deg, rgba(#fff, .0), rgba(#fff, .2));
+						}
+
+						i.icon {
+							color:#fff;
+						}
+					}
+
+					ul.sub-menu {
+						background: #fff;
+					}
+
+					&.callout {
+						&:before {
+							border:2px solid $orange;
+						}
+
+						a {
+							color:$orange;
+						}
+
+						&:hover {
+							&:before {
+								background: $orange;
+							}
+							
+							a {
+								color:#fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================
+	//                                                                                                 
+	//  ###    ###   #####   #####   ##  ##      #####        ###    ###  #####  ##     ##  ##   ##  
+	//  ## #  # ##  ##   ##  ##  ##  ##  ##      ##           ## #  # ##  ##     ####   ##  ##   ##  
+	//  ##  ##  ##  ##   ##  #####   ##  ##      #####        ##  ##  ##  #####  ##  ## ##  ##   ##  
+	//  ##      ##  ##   ##  ##  ##  ##  ##      ##           ##      ##  ##     ##    ###  ##   ##  
+	//  ##      ##   #####   #####   ##  ######  #####        ##      ##  #####  ##     ##   #####   
+	//                                                                                                 
+	//=================================================================================================
+	#mobile-nav {
+		background: rgba($purple, .95);
+
+		&:before {
+			color:#fff;
+		}
+
+		span.close {
+			color:#fff;
+		}
+
+		ul {
+			li {
+				a {
+					color:#fff;
+				}
+
+				&.active {
+					> a {
+						background: rgba(#fff, .25);
+					}
+				}
+			}	
+		}
+
+		nav {
+			border-bottom:2px solid rgba(#fff, .25);
+		}
+	}
+
+
+	//=====================================================
+	//                                                     
+	//  #####   #####    #####   ######  #####  #####    
+	//  ##     ##   ##  ##   ##    ##    ##     ##  ##   
+	//  #####  ##   ##  ##   ##    ##    #####  #####    
+	//  ##     ##   ##  ##   ##    ##    ##     ##  ##   
+	//  ##      #####    #####     ##    #####  ##   ##  
+	//                                                     
+	//=====================================================
+	#footer {
+		background:linear-gradient(90deg, $green, #2cd4be);
+		//background-image: linear-gradient(75deg, darken($green, 20%), darken($green, 5%));
+		color:#fff;
+		
+		&:before {
+			///background:url('../images/ay-bg-logo1.png') no-repeat 90% -20%;
+			display: none;
+		}
+
+		header {
+			a.logo {
+				display: block;
+				width:22rem;
+
+				@include resp(large) {
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				&:hover {
+					opacity:.5;
+				}
+			}
+		}
+
+		div.credits {
+			div.copyright {
+				nav.footer-navigation {
+					ul {
+						li {
+							a {
+								color:$orange;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================
+	//                                                                                 
+	//  ##   ##   #####   ###    ###  #####        ##   ##  #####  #####     #####   
+	//  ##   ##  ##   ##  ## #  # ##  ##           ##   ##  ##     ##  ##   ##   ##  
+	//  #######  ##   ##  ##  ##  ##  #####        #######  #####  #####    ##   ##  
+	//  ##   ##  ##   ##  ##      ##  ##           ##   ##  ##     ##  ##   ##   ##  
+	//  ##   ##   #####   ##      ##  #####        ##   ##  #####  ##   ##   #####   
+	//                                                                                 
+	//=================================================================================
+	#hero {
+		div.main-text {
+			width: 80%;
+			padding-left: 10%;
+			padding-top: 3vw;
+			padding-bottom: 5vw;
+
+			div.buttons {
+				color:#fff;
+
+				a {
+					&.button {
+						&:hover {
+							background: $purple;
+						}
+					}
+					&.link {
+						color:$orange;
+
+						&:before {
+							border-color: $orange;
+						}
+
+						&:hover {
+							color:#fff;
+						}
+					}
+				}
+			}
+		}
+
+		aside.promo-text {
+			border-top:2px solid $masthead_border_color;
+
+			a {
+				color:$orange;
+
+				&:before {
+					background: $yellow;
+				}
+
+				&:hover {
+					&:before {
+						background: transparent;
+					}
+				}
+			}
+		}
+	}
+
+
+	//==============================================================================
+	//                                                                              
+	//  #####     ###     ####    #####        ######  ##  ######  ##      #####  
+	//  ##  ##   ## ##   ##       ##             ##    ##    ##    ##      ##     
+	//  #####   ##   ##  ##  ###  #####          ##    ##    ##    ##      #####  
+	//  ##      #######  ##   ##  ##             ##    ##    ##    ##      ##     
+	//  ##      ##   ##   ####    #####          ##    ##    ##    ######  #####  
+	//                                                                              
+	//==============================================================================
+	#page-title {
+		nav.breadcrumbs {
+			color:#fff;
+
+			a {
+				color:#fff;
+
+				&:hover {
+					color:$orange;
+				}
+			}
+		}
+	}
+
+
+	//======================================================================================================================
+	//                                                                                                                      
+	//   ####   #####   ##     ##  ######  #####  ##     ##  ######        #####   ##       #####    ####  ##  ##   ####  
+	//  ##     ##   ##  ####   ##    ##    ##     ####   ##    ##          ##  ##  ##      ##   ##  ##     ## ##   ##     
+	//  ##     ##   ##  ##  ## ##    ##    #####  ##  ## ##    ##          #####   ##      ##   ##  ##     ####     ###   
+	//  ##     ##   ##  ##    ###    ##    ##     ##    ###    ##          ##  ##  ##      ##   ##  ##     ## ##      ##  
+	//   ####   #####   ##     ##    ##    #####  ##     ##    ##          #####   ######   #####    ####  ##  ##  ####   
+	//                                                                                                                      
+	//======================================================================================================================
+	section.content-block {
+		/**
+		 * Text and cards
+		 */
+		&.text-cards {
+			div.row {
+				div.cards {
+					article.card {
+						a.link {
+							&:hover {
+								color:$orange;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/**
+		 * Featured pages
+		 */
+		&.featured-pages {
+			div.pages {
+				a.page {
+					color:#fff;
+					
+					div.page-content {
+						background: $purple;
+					}
+
+					div.background-image {
+						background-color: $purple;
+					}
+
+					footer {
+						.link {
+							color:#fff;
+						}
+					}
+				}	
+			}
+		}
+
+		/**
+		 * Pricing table
+		 */
+		&.pricing-table {
+			$bg: #eff0f1;
+			//background: url('../images/ay-bg-logo1.png') no-repeat $bg;
+			//background-size: 35% auto;
+			//background-position: 90% 125%;
+			background: $bg;
+
+			div.plans {
+				article.plan {
+					background: #fff;
+					border:1px solid darken($bg, 6.5%);
+
+					header {
+						background: url('../images/pricing-pattern.png') darken($bg, 5%);
+						background-position: center center;
+
+						span.featured-label {
+							background: $yellow;
+							color:$purple;
+						}
+						
+						h5 {
+							&:after {
+								color:$purple;
+							}
+						}
+					}
+
+					ul.features {
+						li {
+							i.icon {
+								&.yes {
+									color:$yellow;
+								}
+							}
+						}
+					}
+					
+					.button {
+						
+					}
+
+					&.featured {
+						header {
+							background: url('../images/pricing-pattern-featured.png') $purple;
+							color:#111;
+
+							h5 {
+								strong {
+									color:#fff;
+								}
+
+								&:after {
+									color:#fff;
+								}
+							}
+						}
+
+						ul.features {
+							li {
+								i.icon {
+									&.yes {
+										color:$purple;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/**
+		 * Image and text (could be slider)
+		 */
+		&.image-and-text {
+			nav.arrows {
+				i.icon {
+					color:$orange;
+					border:1px solid $orange;
+
+					&:hover {
+						color:$purple;
+						border-color:$purple;
+					}
+				}
+			}
+
+			div.slides {
+				article.slide {
+					div.slide-text {
+						background: #fff;
+
+						a {
+							color:$purple;
+
+							&:hover {
+								color:$purple;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//======================================
+	//                                      
+	//  #####   ##       #####    ####    
+	//  ##  ##  ##      ##   ##  ##       
+	//  #####   ##      ##   ##  ##  ###  
+	//  ##  ##  ##      ##   ##  ##   ##  
+	//  #####   ######   #####    ####    
+	//                                      
+	//======================================
+	&.blog, &.single, &.archive {
+		article.post {
+			header {
+				h2.entry-title {
+					a {
+						&:hover {
+							color:$orange;
+						}
+					}
+				}
+			}
+
+			div.entry-summary {
+				p {
+					a.link {
+						&:hover {
+							color:$orange;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}

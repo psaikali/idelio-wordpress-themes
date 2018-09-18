@@ -1,0 +1,237 @@
+.orange {
+  color: #eaea7b; }
+
+.purple {
+  color: #1ba4bd; }
+
+::-moz-selection {
+  background: rgba(234, 234, 123, 0.625); }
+
+::selection {
+  background: rgba(234, 234, 123, 0.625); }
+
+body.numero-court h1 strong, body.numero-court h2 strong, body.numero-court h3 strong, body.numero-court h4 strong, body.numero-court h5 strong, body.numero-court h6 strong {
+  color: #1ba4bd; }
+
+body.numero-court h1:after, body.numero-court h2:after, body.numero-court h3:after, body.numero-court h4:after {
+  color: #eaea7b; }
+
+body.numero-court .button {
+  background: #eaea7b;
+  border: 2px solid #eaea7b;
+  color: #001572;
+  font-weight: bold; }
+  body.numero-court .button:hover, body.numero-court .button.transparent {
+    background: #fff;
+    color: #eaea7b; }
+  body.numero-court .button.transparent:hover {
+    background: #eaea7b;
+    color: #fff; }
+  body.numero-court .button.white {
+    background: #fff;
+    color: #eaea7b;
+    border-color: #fff; }
+    body.numero-court .button.white:hover {
+      background: #eaea7b;
+      border-color: #eaea7b;
+      color: #fff; }
+
+body.numero-court .link {
+  color: #1ba4bd; }
+  body.numero-court .link:before {
+    background: #1ba4bd; }
+  body.numero-court .link:hover {
+    color: #fff; }
+    body.numero-court .link:hover:before {
+      border: 1px solid rgba(234, 234, 123, 0.5); }
+
+body.numero-court ul.bullets li:before {
+  background: #eaea7b; }
+
+body.numero-court #utility-bar {
+  background: #0a2e6f;
+  background-image: linear-gradient(75deg, #0e5764, #1891a7); }
+  body.numero-court #utility-bar, body.numero-court #utility-bar a {
+    color: #bef5f4; }
+  body.numero-court #utility-bar nav ul li:before {
+    background-color: rgba(190, 245, 244, 0.6); }
+  body.numero-court #utility-bar nav ul li a:hover {
+    color: #fff; }
+  body.numero-court #utility-bar nav ul li a .icon {
+    color: #fff; }
+
+body.numero-court #intro {
+  color: #fff;
+  background-color: #1ba4bd; }
+  body.numero-court #intro.default-background {
+    background: url("../images/default-pattern.png") repeat #1ba4bd;
+    background-image: url("../images/default-pattern.png");
+    background-image: url("../images/default-pattern.png"), linear-gradient(90deg, #1ba4bd, #2cd4be); }
+
+body.numero-court #masthead:after {
+  height: 2px;
+  left: 21.25vw;
+  bottom: -2px;
+  background: rgba(130, 201, 213, 0.75); }
+
+body.numero-court #masthead a.logo {
+  width: 17vw;
+  top: 2.5rem; }
+  @media (max-width: 767px) {
+    body.numero-court #masthead a.logo {
+      width: 30vw;
+      margin-bottom: 3rem;
+      top: 1rem; } }
+
+body.numero-court #masthead nav.primary-navigation ul.menu > li:after {
+  background: #eaea7b; }
+
+body.numero-court #masthead nav.primary-navigation ul.menu > li a {
+  color: #fff; }
+  body.numero-court #masthead nav.primary-navigation ul.menu > li a:before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)); }
+  body.numero-court #masthead nav.primary-navigation ul.menu > li a i.icon {
+    color: #fff; }
+
+body.numero-court #masthead nav.primary-navigation ul.menu > li ul.sub-menu {
+  background: #fff; }
+
+body.numero-court #masthead nav.primary-navigation ul.menu > li.callout:before {
+  border: 2px solid #eaea7b; }
+
+body.numero-court #masthead nav.primary-navigation ul.menu > li.callout a {
+  color: #eaea7b; }
+
+body.numero-court #masthead nav.primary-navigation ul.menu > li.callout:hover:before {
+  background: #eaea7b; }
+
+body.numero-court #masthead nav.primary-navigation ul.menu > li.callout:hover a {
+  color: #fff; }
+
+body.numero-court #mobile-nav {
+  background: rgba(27, 164, 189, 0.95); }
+  body.numero-court #mobile-nav:before {
+    color: #fff; }
+  body.numero-court #mobile-nav span.close {
+    color: #fff; }
+  body.numero-court #mobile-nav ul li a {
+    color: #fff; }
+  body.numero-court #mobile-nav ul li.active > a {
+    background: rgba(255, 255, 255, 0.25); }
+  body.numero-court #mobile-nav nav {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25); }
+
+body.numero-court #footer {
+  background: linear-gradient(90deg, #1ba4bd, #2cd4be);
+  color: #fff; }
+  body.numero-court #footer:before {
+    display: none; }
+  body.numero-court #footer header a.logo {
+    display: block;
+    width: 22rem; }
+    @media (max-width: 1023px) {
+      body.numero-court #footer header a.logo {
+        margin-left: auto;
+        margin-right: auto; } }
+    body.numero-court #footer header a.logo:hover {
+      opacity: .5; }
+  body.numero-court #footer div.credits div.copyright nav.footer-navigation ul li a {
+    color: #eaea7b; }
+
+body.numero-court #hero div.main-text {
+  width: 80%;
+  padding-left: 10%;
+  padding-top: 3vw;
+  padding-bottom: 5vw; }
+  body.numero-court #hero div.main-text div.buttons {
+    color: #fff; }
+    body.numero-court #hero div.main-text div.buttons a.button:hover {
+      background: #1ba4bd; }
+    body.numero-court #hero div.main-text div.buttons a.link {
+      color: #eaea7b; }
+      body.numero-court #hero div.main-text div.buttons a.link:before {
+        border-color: #eaea7b; }
+      body.numero-court #hero div.main-text div.buttons a.link:hover {
+        color: #fff; }
+
+body.numero-court #hero aside.promo-text {
+  border-top: 2px solid rgba(130, 201, 213, 0.75); }
+  body.numero-court #hero aside.promo-text a {
+    color: #eaea7b; }
+    body.numero-court #hero aside.promo-text a:before {
+      background: #eaea7b; }
+    body.numero-court #hero aside.promo-text a:hover:before {
+      background: transparent; }
+
+body.numero-court #page-title nav.breadcrumbs {
+  color: #fff; }
+  body.numero-court #page-title nav.breadcrumbs a {
+    color: #fff; }
+    body.numero-court #page-title nav.breadcrumbs a:hover {
+      color: #eaea7b; }
+
+body.numero-court section.content-block {
+  /**
+		 * Text and cards
+		 */
+  /**
+		 * Featured pages
+		 */
+  /**
+		 * Pricing table
+		 */
+  /**
+		 * Image and text (could be slider)
+		 */ }
+  body.numero-court section.content-block.text-cards div.row div.cards article.card a.link:hover {
+    color: #eaea7b; }
+  body.numero-court section.content-block.featured-pages div.pages a.page {
+    color: #fff; }
+    body.numero-court section.content-block.featured-pages div.pages a.page div.page-content {
+      background: #1ba4bd; }
+    body.numero-court section.content-block.featured-pages div.pages a.page div.background-image {
+      background-color: #1ba4bd; }
+    body.numero-court section.content-block.featured-pages div.pages a.page footer .link {
+      color: #fff; }
+  body.numero-court section.content-block.pricing-table {
+    background: #eff0f1; }
+    body.numero-court section.content-block.pricing-table div.plans article.plan {
+      background: #fff;
+      border: 1px solid #dddfe2; }
+      body.numero-court section.content-block.pricing-table div.plans article.plan header {
+        background: url("../images/pricing-pattern.png") #e1e3e5;
+        background-position: center center; }
+        body.numero-court section.content-block.pricing-table div.plans article.plan header span.featured-label {
+          background: #eaea7b;
+          color: #1ba4bd; }
+        body.numero-court section.content-block.pricing-table div.plans article.plan header h5:after {
+          color: #1ba4bd; }
+      body.numero-court section.content-block.pricing-table div.plans article.plan ul.features li i.icon.yes {
+        color: #eaea7b; }
+      body.numero-court section.content-block.pricing-table div.plans article.plan.featured header {
+        background: url("../images/pricing-pattern-featured.png") #1ba4bd;
+        color: #111; }
+        body.numero-court section.content-block.pricing-table div.plans article.plan.featured header h5 strong {
+          color: #fff; }
+        body.numero-court section.content-block.pricing-table div.plans article.plan.featured header h5:after {
+          color: #fff; }
+      body.numero-court section.content-block.pricing-table div.plans article.plan.featured ul.features li i.icon.yes {
+        color: #1ba4bd; }
+  body.numero-court section.content-block.image-and-text nav.arrows i.icon {
+    color: #eaea7b;
+    border: 1px solid #eaea7b; }
+    body.numero-court section.content-block.image-and-text nav.arrows i.icon:hover {
+      color: #1ba4bd;
+      border-color: #1ba4bd; }
+  body.numero-court section.content-block.image-and-text div.slides article.slide div.slide-text {
+    background: #fff; }
+    body.numero-court section.content-block.image-and-text div.slides article.slide div.slide-text a {
+      color: #1ba4bd; }
+      body.numero-court section.content-block.image-and-text div.slides article.slide div.slide-text a:hover {
+        color: #1ba4bd; }
+
+body.numero-court.blog article.post header h2.entry-title a:hover, body.numero-court.single article.post header h2.entry-title a:hover, body.numero-court.archive article.post header h2.entry-title a:hover {
+  color: #eaea7b; }
+
+body.numero-court.blog article.post div.entry-summary p a.link:hover, body.numero-court.single article.post div.entry-summary p a.link:hover, body.numero-court.archive article.post div.entry-summary p a.link:hover {
+  color: #eaea7b; }
