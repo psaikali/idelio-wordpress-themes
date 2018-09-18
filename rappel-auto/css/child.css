@@ -1,0 +1,221 @@
+.orange {
+  color: #fecc2f; }
+
+.purple {
+  color: #1063a5; }
+
+::-moz-selection {
+  background: rgba(254, 204, 47, 0.625); }
+
+::selection {
+  background: rgba(254, 204, 47, 0.625); }
+
+body.rappel-auto h1 strong, body.rappel-auto h2 strong, body.rappel-auto h3 strong, body.rappel-auto h4 strong, body.rappel-auto h5 strong, body.rappel-auto h6 strong {
+  color: #1063a5; }
+
+body.rappel-auto h1:after, body.rappel-auto h2:after, body.rappel-auto h3:after, body.rappel-auto h4:after {
+  color: #fecc2f; }
+
+body.rappel-auto .button {
+  background: #fecc2f;
+  border: 2px solid #fecc2f;
+  color: #001572;
+  font-weight: bold; }
+  body.rappel-auto .button:hover, body.rappel-auto .button.transparent {
+    background: #fff;
+    color: #fecc2f; }
+  body.rappel-auto .button.transparent:hover {
+    background: #fecc2f;
+    color: #fff; }
+  body.rappel-auto .button.white {
+    background: #fff;
+    color: #fecc2f;
+    border-color: #fff; }
+    body.rappel-auto .button.white:hover {
+      background: #fecc2f;
+      border-color: #fecc2f;
+      color: #fff; }
+
+body.rappel-auto .link {
+  color: #1063a5; }
+  body.rappel-auto .link:before {
+    background: #1063a5; }
+  body.rappel-auto .link:hover {
+    color: #fff; }
+    body.rappel-auto .link:hover:before {
+      border: 1px solid rgba(254, 204, 47, 0.5); }
+
+body.rappel-auto ul.bullets li:before {
+  background: #fecc2f; }
+
+body.rappel-auto #utility-bar {
+  background: #0a2e6f; }
+  body.rappel-auto #utility-bar, body.rappel-auto #utility-bar a {
+    color: #b2e2f5; }
+  body.rappel-auto #utility-bar nav ul li:before {
+    background-color: rgba(178, 226, 245, 0.6); }
+  body.rappel-auto #utility-bar nav ul li a:hover {
+    color: #fff; }
+  body.rappel-auto #utility-bar nav ul li a .icon {
+    color: #fff; }
+
+body.rappel-auto #intro {
+  color: #fff;
+  background-color: #1063a5; }
+  body.rappel-auto #intro.default-background {
+    background: url("../images/default-pattern.png") repeat #1063a5;
+    background-image: url("../images/default-pattern.png");
+    background-image: url("../images/default-pattern.png"), linear-gradient(75deg, #001572, #1063a5); }
+
+body.rappel-auto #masthead:after {
+  height: 2px;
+  left: 7.5vw;
+  bottom: -2px;
+  background: rgba(96, 161, 212, 0.75); }
+
+body.rappel-auto #masthead a.logo {
+  width: 5vw;
+  top: 2.5rem; }
+  @media (max-width: 767px) {
+    body.rappel-auto #masthead a.logo {
+      width: 30vw;
+      margin-bottom: 3rem;
+      top: 1rem; } }
+
+body.rappel-auto #masthead nav.primary-navigation ul.menu > li:after {
+  background: #fecc2f; }
+
+body.rappel-auto #masthead nav.primary-navigation ul.menu > li a {
+  color: #fff; }
+  body.rappel-auto #masthead nav.primary-navigation ul.menu > li a:before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)); }
+  body.rappel-auto #masthead nav.primary-navigation ul.menu > li a i.icon {
+    color: #fff; }
+
+body.rappel-auto #masthead nav.primary-navigation ul.menu > li ul.sub-menu {
+  background: #fff; }
+
+body.rappel-auto #masthead nav.primary-navigation ul.menu > li.callout:before {
+  border: 2px solid #fecc2f; }
+
+body.rappel-auto #masthead nav.primary-navigation ul.menu > li.callout a {
+  color: #fecc2f; }
+
+body.rappel-auto #masthead nav.primary-navigation ul.menu > li.callout:hover:before {
+  background: #fecc2f; }
+
+body.rappel-auto #masthead nav.primary-navigation ul.menu > li.callout:hover a {
+  color: #fff; }
+
+body.rappel-auto #mobile-nav {
+  background: rgba(16, 99, 165, 0.95); }
+  body.rappel-auto #mobile-nav:before {
+    color: #fff; }
+  body.rappel-auto #mobile-nav span.close {
+    color: #fff; }
+  body.rappel-auto #mobile-nav ul li a {
+    color: #fff; }
+  body.rappel-auto #mobile-nav ul li.active > a {
+    background: rgba(255, 255, 255, 0.25); }
+  body.rappel-auto #mobile-nav nav {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25); }
+
+body.rappel-auto #footer {
+  background: linear-gradient(90deg, #001572, #1063a5);
+  color: #fff; }
+  body.rappel-auto #footer:before {
+    background: url("../images/ay-bg-logo1.png") no-repeat 90% -20%; }
+  body.rappel-auto #footer header a.logo {
+    display: block;
+    width: 10rem; }
+    @media (max-width: 1023px) {
+      body.rappel-auto #footer header a.logo {
+        margin-left: auto;
+        margin-right: auto; } }
+    body.rappel-auto #footer header a.logo:hover {
+      opacity: .5; }
+  body.rappel-auto #footer div.credits div.copyright nav.footer-navigation ul li a {
+    color: #fecc2f; }
+
+body.rappel-auto #hero div.main-text div.buttons {
+  color: #fff; }
+  body.rappel-auto #hero div.main-text div.buttons a.link {
+    color: #fecc2f; }
+    body.rappel-auto #hero div.main-text div.buttons a.link:before {
+      border-color: #fecc2f; }
+    body.rappel-auto #hero div.main-text div.buttons a.link:hover {
+      color: #fff; }
+
+body.rappel-auto #hero aside.promo-text {
+  border-top: 2px solid rgba(96, 161, 212, 0.75); }
+  body.rappel-auto #hero aside.promo-text a {
+    color: #fecc2f; }
+
+body.rappel-auto #page-title nav.breadcrumbs {
+  color: #fff; }
+  body.rappel-auto #page-title nav.breadcrumbs a {
+    color: #fff; }
+    body.rappel-auto #page-title nav.breadcrumbs a:hover {
+      color: #fecc2f; }
+
+body.rappel-auto section.content-block {
+  /**
+		 * Text and cards
+		 */
+  /**
+		 * Featured pages
+		 */
+  /**
+		 * Pricing table
+		 */
+  /**
+		 * Image and text (could be slider)
+		 */ }
+  body.rappel-auto section.content-block.text-cards div.row div.cards article.card a.link:hover {
+    color: #fecc2f; }
+  body.rappel-auto section.content-block.featured-pages div.pages a.page {
+    color: #fff; }
+    body.rappel-auto section.content-block.featured-pages div.pages a.page div.page-content {
+      background: #1063a5; }
+    body.rappel-auto section.content-block.featured-pages div.pages a.page div.background-image {
+      background-color: #1063a5; }
+    body.rappel-auto section.content-block.featured-pages div.pages a.page footer .link {
+      color: #fff; }
+  body.rappel-auto section.content-block.pricing-table {
+    background: #eff0f1; }
+    body.rappel-auto section.content-block.pricing-table div.plans article.plan {
+      background: #fff;
+      border: 1px solid #dddfe2; }
+      body.rappel-auto section.content-block.pricing-table div.plans article.plan header {
+        background: url("../images/pricing-pattern.png") #e1e3e5;
+        background-position: center center; }
+        body.rappel-auto section.content-block.pricing-table div.plans article.plan header span.featured-label {
+          background: #1063a5;
+          color: #fff; }
+        body.rappel-auto section.content-block.pricing-table div.plans article.plan header h5:after {
+          color: #1063a5; }
+      body.rappel-auto section.content-block.pricing-table div.plans article.plan ul.features li i.icon.yes {
+        color: #1063a5; }
+      body.rappel-auto section.content-block.pricing-table div.plans article.plan.featured header {
+        background: url("../images/pricing-pattern-featured.png") #1063a5;
+        color: #111; }
+        body.rappel-auto section.content-block.pricing-table div.plans article.plan.featured header h5:after {
+          color: #fff; }
+      body.rappel-auto section.content-block.pricing-table div.plans article.plan.featured ul.features li i.icon.yes {
+        color: #fecc2f; }
+  body.rappel-auto section.content-block.image-and-text nav.arrows i.icon {
+    color: #fecc2f;
+    border: 1px solid #fecc2f; }
+    body.rappel-auto section.content-block.image-and-text nav.arrows i.icon:hover {
+      color: #1063a5;
+      border-color: #1063a5; }
+  body.rappel-auto section.content-block.image-and-text div.slides article.slide div.slide-text {
+    background: #fff; }
+    body.rappel-auto section.content-block.image-and-text div.slides article.slide div.slide-text a:hover {
+      color: #fecc2f; }
+
+body.rappel-auto.blog article.post header h2.entry-title a:hover, body.rappel-auto.single article.post header h2.entry-title a:hover, body.rappel-auto.archive article.post header h2.entry-title a:hover {
+  color: #fecc2f; }
+
+body.rappel-auto.blog article.post div.entry-summary p a.link:hover, body.rappel-auto.single article.post div.entry-summary p a.link:hover, body.rappel-auto.archive article.post div.entry-summary p a.link:hover {
+  color: #fecc2f; }

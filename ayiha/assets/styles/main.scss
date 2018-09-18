@@ -460,7 +460,7 @@ blockquote {
 		}
 	}
 
-	div.container-fluid {
+	div.container-fluid, div.container {
 		position: relative;
 		@extend .clearfix;
 		//height:7rem;

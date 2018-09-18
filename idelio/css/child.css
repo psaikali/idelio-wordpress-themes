@@ -1,0 +1,307 @@
+.orange {
+  color: #feb62f; }
+
+.purple {
+  color: #8710a5; }
+
+::-moz-selection {
+  background: rgba(254, 182, 47, 0.625); }
+
+::selection {
+  background: rgba(254, 182, 47, 0.625); }
+
+body.idelio h1 strong, body.idelio h2 strong, body.idelio h3 strong, body.idelio h4 strong, body.idelio h5 strong, body.idelio h6 strong {
+  color: #8710a5; }
+
+body.idelio h1:after, body.idelio h2:after, body.idelio h3:after, body.idelio h4:after {
+  color: #feb62f; }
+
+body.idelio .button {
+  background: #feb62f;
+  border: 2px solid #feb62f;
+  color: #5c0064;
+  font-weight: bold; }
+  body.idelio .button:hover, body.idelio .button.transparent {
+    background: #fff;
+    color: #feb62f; }
+  body.idelio .button.transparent:hover {
+    background: #feb62f;
+    color: #fff; }
+  body.idelio .button.white {
+    background: #fff;
+    color: #feb62f;
+    border-color: #fff; }
+    body.idelio .button.white:hover {
+      background: #feb62f;
+      border-color: #feb62f;
+      color: #fff; }
+
+body.idelio .link {
+  color: #8710a5; }
+  body.idelio .link:before {
+    background: #8710a5; }
+  body.idelio .link:hover {
+    color: #fff; }
+    body.idelio .link:hover:before {
+      border: 1px solid rgba(254, 182, 47, 0.5); }
+
+body.idelio ul.bullets li:before {
+  background: #feb62f; }
+
+body.idelio #utility-bar {
+  background: #0a2e6f; }
+  body.idelio #utility-bar, body.idelio #utility-bar a {
+    color: #b2e2f5; }
+  body.idelio #utility-bar nav ul li:before {
+    background-color: rgba(178, 226, 245, 0.6); }
+  body.idelio #utility-bar nav ul li a:hover {
+    color: #fff; }
+  body.idelio #utility-bar nav ul li a .icon {
+    color: #fff; }
+
+body.idelio #intro {
+  color: #fff;
+  background-color: #8710a5; }
+  body.idelio #intro.default-background {
+    background: url("../images/default-pattern.png") repeat #8710a5;
+    background-image: url("../images/default-pattern.png");
+    background-image: url("../images/default-pattern.png"), linear-gradient(75deg, #5c0064, #8710a5); }
+
+@media (max-width: 767px) {
+  body.idelio #masthead {
+    padding-left: 0;
+    padding-right: 0; } }
+
+@media (max-width: 767px) {
+  body.idelio #masthead span.trigger-mobile-menu {
+    right: 3.5vw; } }
+
+body.idelio #masthead:after {
+  display: none; }
+
+body.idelio #masthead div.container {
+  background: rgba(78, 9, 95, 0.65);
+  border-radius: 0 0 .5rem .5rem;
+  padding-left: 2vw;
+  padding-right: 2vw; }
+  @media (max-width: 767px) {
+    body.idelio #masthead div.container {
+      width: 100%; } }
+
+body.idelio #masthead a.logo {
+  width: 9rem;
+  top: .5rem; }
+  @media (min-width: 1024px) {
+    body.idelio #masthead a.logo {
+      width: 12rem;
+      top: 1.25rem; } }
+  body.idelio #masthead a.logo img {
+    width: 100%;
+    height: auto; }
+  @media (max-width: 767px) {
+    body.idelio #masthead a.logo {
+      width: 20vw;
+      margin-bottom: 3rem;
+      top: 1.25rem; } }
+
+body.idelio #masthead nav.primary-navigation ul.menu > li:after {
+  background: #feb62f; }
+
+body.idelio #masthead nav.primary-navigation ul.menu > li a {
+  color: #fff;
+  font-size: .85em; }
+  body.idelio #masthead nav.primary-navigation ul.menu > li a:before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.2)); }
+  body.idelio #masthead nav.primary-navigation ul.menu > li a i.icon {
+    color: #fff; }
+
+body.idelio #masthead nav.primary-navigation ul.menu > li ul.sub-menu {
+  background: #fff; }
+
+body.idelio #masthead nav.primary-navigation ul.menu > li.callout:before {
+  border: 2px solid #feb62f; }
+
+body.idelio #masthead nav.primary-navigation ul.menu > li.callout a {
+  color: #feb62f; }
+
+body.idelio #masthead nav.primary-navigation ul.menu > li.callout:hover:before {
+  background: #feb62f; }
+
+body.idelio #masthead nav.primary-navigation ul.menu > li.callout:hover a {
+  color: #fff; }
+
+body.idelio #mobile-nav {
+  background: rgba(135, 16, 165, 0.95); }
+  body.idelio #mobile-nav:before {
+    color: #fff; }
+  body.idelio #mobile-nav span.close {
+    color: #fff; }
+  body.idelio #mobile-nav ul li a {
+    color: #fff; }
+  body.idelio #mobile-nav ul li.active > a {
+    background: rgba(255, 255, 255, 0.25); }
+  body.idelio #mobile-nav nav {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25); }
+
+body.idelio #footer {
+  background: linear-gradient(90deg, #5c0064, #8710a5);
+  color: #fff; }
+  body.idelio #footer:before {
+    background: url("../images/ay-bg-logo1.png") no-repeat 90% -20%; }
+  body.idelio #footer header a.logo {
+    display: block;
+    width: 10rem; }
+    @media (max-width: 1023px) {
+      body.idelio #footer header a.logo {
+        margin-left: auto;
+        margin-right: auto; } }
+    body.idelio #footer header a.logo:hover {
+      opacity: .5; }
+  body.idelio #footer div.credits div.copyright nav.footer-navigation ul li a {
+    color: #feb62f; }
+
+body.idelio #hero div.main-text {
+  text-align: center;
+  padding-left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5vw;
+  padding-bottom: 5vw; }
+  body.idelio #hero div.main-text div.buttons {
+    color: #fff; }
+    @media (min-width: 1024px) {
+      body.idelio #hero div.main-text div.buttons {
+        margin-right: 0; } }
+    body.idelio #hero div.main-text div.buttons a.link {
+      color: #feb62f; }
+      body.idelio #hero div.main-text div.buttons a.link:before {
+        border-color: #feb62f; }
+      body.idelio #hero div.main-text div.buttons a.link:hover {
+        color: #fff; }
+
+body.idelio #hero aside.promo-text {
+  border-top: 2px solid rgba(189, 96, 212, 0.75); }
+  body.idelio #hero aside.promo-text a {
+    color: #feb62f; }
+
+body.idelio #hero + section.content-block.featured-pages {
+  padding-top: 0;
+  margin-top: -12.5vw;
+  margin-bottom: 12.5vw;
+  position: relative;
+  top: 10.625vw; }
+  body.idelio #hero + section.content-block.featured-pages div.pages {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media (max-width: 767px) {
+      body.idelio #hero + section.content-block.featured-pages div.pages {
+        width: 100%; } }
+    body.idelio #hero + section.content-block.featured-pages div.pages a.page {
+      margin-left: 1%;
+      margin-right: 1%;
+      box-shadow: 0px 10px 15px -10px rgba(0, 0, 15, 0.35); }
+      body.idelio #hero + section.content-block.featured-pages div.pages a.page div.page-content {
+        border-radius: .5rem; }
+        body.idelio #hero + section.content-block.featured-pages div.pages a.page div.page-content header {
+          position: relative;
+          z-index: 10;
+          margin: 1.5vw 1.5vw 0 1.5vw; }
+          @media (max-width: 767px) {
+            body.idelio #hero + section.content-block.featured-pages div.pages a.page div.page-content header h4 {
+              font-size: 3rem; } }
+          body.idelio #hero + section.content-block.featured-pages div.pages a.page div.page-content header p {
+            opacity: .75; }
+        body.idelio #hero + section.content-block.featured-pages div.pages a.page div.page-content footer {
+          left: 1.5vw;
+          bottom: 1.5vw;
+          font-size: 1.625rem; }
+      body.idelio #hero + section.content-block.featured-pages div.pages a.page:hover {
+        box-shadow: 0px 15px 20px -10px rgba(0, 0, 15, 0.2); }
+        body.idelio #hero + section.content-block.featured-pages div.pages a.page:hover div.page-content header p {
+          opacity: 0; }
+    body.idelio #hero + section.content-block.featured-pages div.pages.has-2-pages a.page {
+      width: 48%; }
+      body.idelio #hero + section.content-block.featured-pages div.pages.has-2-pages a.page div.page-content {
+        padding-bottom: 100%; }
+    body.idelio #hero + section.content-block.featured-pages div.pages.has-3-pages a.page {
+      width: 31.333%; }
+      body.idelio #hero + section.content-block.featured-pages div.pages.has-3-pages a.page div.page-content {
+        padding-bottom: 100%; }
+    body.idelio #hero + section.content-block.featured-pages div.pages.has-4-pages a.page {
+      width: 23%; }
+      body.idelio #hero + section.content-block.featured-pages div.pages.has-4-pages a.page div.page-content {
+        padding-bottom: 100%; }
+    body.idelio #hero + section.content-block.featured-pages div.pages.has-5-pages a.page {
+      width: 18%; }
+      body.idelio #hero + section.content-block.featured-pages div.pages.has-5-pages a.page div.page-content {
+        padding-bottom: 100%; }
+
+body.idelio #page-title nav.breadcrumbs {
+  color: #fff; }
+  body.idelio #page-title nav.breadcrumbs a {
+    color: #fff; }
+    body.idelio #page-title nav.breadcrumbs a:hover {
+      color: #feb62f; }
+
+body.idelio section.content-block {
+  /**
+		 * Text and cards
+		 */
+  /**
+		 * Featured pages
+		 */
+  /**
+		 * Pricing table
+		 */
+  /**
+		 * Image and text (could be slider)
+		 */ }
+  body.idelio section.content-block.text-cards div.row div.cards article.card a.link:hover {
+    color: #feb62f; }
+  body.idelio section.content-block.featured-pages div.pages a.page {
+    color: #fff; }
+    body.idelio section.content-block.featured-pages div.pages a.page div.page-content {
+      background: #8710a5; }
+    body.idelio section.content-block.featured-pages div.pages a.page div.background-image {
+      background-color: #8710a5; }
+    body.idelio section.content-block.featured-pages div.pages a.page footer .link {
+      color: #fff; }
+  body.idelio section.content-block.pricing-table {
+    background: #eff0f1; }
+    body.idelio section.content-block.pricing-table div.plans article.plan {
+      background: #fff;
+      border: 1px solid #dddfe2; }
+      body.idelio section.content-block.pricing-table div.plans article.plan header {
+        background: url("../images/pricing-pattern.png") #e1e3e5;
+        background-position: center center; }
+        body.idelio section.content-block.pricing-table div.plans article.plan header span.featured-label {
+          background: #8710a5;
+          color: #fff; }
+        body.idelio section.content-block.pricing-table div.plans article.plan header h5:after {
+          color: #8710a5; }
+      body.idelio section.content-block.pricing-table div.plans article.plan ul.features li i.icon.yes {
+        color: #8710a5; }
+      body.idelio section.content-block.pricing-table div.plans article.plan.featured header {
+        background: url("../images/pricing-pattern-featured.png") #8710a5;
+        color: #111; }
+        body.idelio section.content-block.pricing-table div.plans article.plan.featured header h5:after {
+          color: #fff; }
+      body.idelio section.content-block.pricing-table div.plans article.plan.featured ul.features li i.icon.yes {
+        color: #feb62f; }
+  body.idelio section.content-block.image-and-text nav.arrows i.icon {
+    color: #feb62f;
+    border: 1px solid #feb62f; }
+    body.idelio section.content-block.image-and-text nav.arrows i.icon:hover {
+      color: #8710a5;
+      border-color: #8710a5; }
+  body.idelio section.content-block.image-and-text div.slides article.slide div.slide-text {
+    background: #fff; }
+    body.idelio section.content-block.image-and-text div.slides article.slide div.slide-text a:hover {
+      color: #feb62f; }
+
+body.idelio.blog article.post header h2.entry-title a:hover, body.idelio.single article.post header h2.entry-title a:hover, body.idelio.archive article.post header h2.entry-title a:hover {
+  color: #feb62f; }
+
+body.idelio.blog article.post div.entry-summary p a.link:hover, body.idelio.single article.post div.entry-summary p a.link:hover, body.idelio.archive article.post div.entry-summary p a.link:hover {
+  color: #feb62f; }

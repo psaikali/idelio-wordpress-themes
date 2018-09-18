@@ -1,0 +1,724 @@
+@import "breakpoints";
+@import "mixins";
+
+//=============================================================
+//                                                             
+//  ##  ###    ###  #####    #####   #####    ######   ####  
+//  ##  ## #  # ##  ##  ##  ##   ##  ##  ##     ##    ##     
+//  ##  ##  ##  ##  #####   ##   ##  #####      ##     ###   
+//  ##  ##      ##  ##      ##   ##  ##  ##     ##       ##  
+//  ##  ##      ##  ##       #####   ##   ##    ##    ####   
+//                                                             
+//=============================================================
+$orange: #feb62f;
+.orange { color:$orange; }
+$purple: #8710a5;
+.purple { color:$purple; }
+$dark_blue: #5c0064;
+
+$masthead_border_color:rgba(desaturate(lighten($purple, 25%), 25%), .75);
+
+$padding:2.5rem;
+
+::-moz-selection { background: rgba($orange, .625); }
+::selection { background: rgba($orange, .625); }
+
+body.idelio {
+
+	//================================================================
+	//                                                                
+	//   ####   #####   ###    ###  ###    ###   #####   ##     ##  
+	//  ##     ##   ##  ## #  # ##  ## #  # ##  ##   ##  ####   ##  
+	//  ##     ##   ##  ##  ##  ##  ##  ##  ##  ##   ##  ##  ## ##  
+	//  ##     ##   ##  ##      ##  ##      ##  ##   ##  ##    ###  
+	//   ####   #####   ##      ##  ##      ##   #####   ##     ##  
+	//                                                                
+	//================================================================
+	h1, h2, h3, h4, h5, h6 {
+		strong {
+			color:$purple;
+		}
+	}
+
+	h1, h2, h3, h4 {
+		&:after {
+			color:$orange;
+		}
+	}
+
+	.button {
+		background:$orange;
+		border:2px solid $orange;
+		color:$dark_blue;
+		font-weight: bold;
+
+		&:hover, &.transparent {
+			background:#fff;
+			color:$orange;
+		}
+
+		&.transparent {
+			&:hover {
+				background:$orange;
+				color:#fff;
+			}
+		}
+
+		&.white {
+			background:#fff;
+			color:$orange;
+			border-color:#fff;
+
+			&:hover {
+				background:$orange;
+				border-color:$orange;
+				color:#fff;
+			}
+		}
+	}
+
+	.link {
+		color:$purple;
+
+		&:before {
+			background:$purple;
+		}
+
+		&:hover {
+			color:#fff;
+
+			&:before {
+				border:1px solid rgba($orange, .5);
+			}
+		}
+	}
+
+	ul.bullets {
+		li {
+			&:before {
+				background:$orange;
+			}
+		}
+	}
+
+	//=============================================================================
+	//                                                                             
+	//   ####  ##   ##  #####   ##   ##  #####    ###    ####    #####  #####    
+	//  ##     ##   ##  ##  ##  ##   ##  ##      ## ##   ##  ##  ##     ##  ##   
+	//   ###   ##   ##  #####   #######  #####  ##   ##  ##  ##  #####  #####    
+	//     ##  ##   ##  ##  ##  ##   ##  ##     #######  ##  ##  ##     ##  ##   
+	//  ####    #####   #####   ##   ##  #####  ##   ##  ####    #####  ##   ##  
+	//                                                                             
+	//=============================================================================
+	#utility-bar {
+		$bg-color: #0a2e6f;
+		$txt-color: #b2e2f5;
+
+		background: $bg-color;
+
+		&, a { color: $txt-color; }
+
+		nav {
+			ul {
+				li {
+					&:before {
+						background-color: rgba($txt-color, .6);
+					}
+
+					a {
+						&:hover {
+							color:#fff;
+						}
+
+						.icon {
+							color:#fff;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=====================================================
+	//                                                     
+	//  ##   ##  #####    ###    ####    #####  #####    
+	//  ##   ##  ##      ## ##   ##  ##  ##     ##  ##   
+	//  #######  #####  ##   ##  ##  ##  #####  #####    
+	//  ##   ##  ##     #######  ##  ##  ##     ##  ##   
+	//  ##   ##  #####  ##   ##  ####    #####  ##   ##  
+	//                                                     
+	//=====================================================
+	#intro {
+		color:#fff;
+		background-color: $purple;
+
+		&.default-background {
+			background: url('../images/default-pattern.png') repeat $purple;
+			background-image: url('../images/default-pattern.png');
+			background-image: url('../images/default-pattern.png'), linear-gradient(75deg, $dark_blue, $purple);
+		}
+	}
+
+	#masthead {
+		$w: 12rem;
+
+		@include resp(medium) {
+			padding-left:0;
+			padding-right:0;
+		}
+
+		span.trigger-mobile-menu {
+			@include resp(medium) {
+				right:3.5vw;
+			}
+		}
+
+		&:after {
+			display: none;
+		}
+
+		div.container {
+			background: transparentize( darken( $purple, 15% ), .35 );
+			border-radius: 0 0 .5rem .5rem;
+			padding-left:2vw;
+			padding-right:2vw;
+
+			@include resp(medium) {
+				width:100%;
+			}
+		}
+		
+		a.logo {
+			width:9rem;
+			top: .5rem;
+
+			@include resp(large-up) {
+				width:12rem;
+				top: 1.25rem;
+			}
+
+			img {
+				width:100%;
+				height:auto;
+			}
+
+			@include resp(medium) {
+				width:20vw;	
+				margin-bottom: 3rem;
+				top:1.25rem;
+			}
+		}
+		
+		nav.primary-navigation {
+			ul.menu {
+				> li {
+					&:after {
+						background:$orange;
+					}
+
+					a {
+						color:#fff;
+						font-size: .85em;
+
+						&:before {
+							background:linear-gradient(180deg, rgba(#fff, .0), rgba(#fff, .2));
+						}
+
+						i.icon {
+							color:#fff;
+						}
+					}
+
+					ul.sub-menu {
+						background: #fff;
+					}
+
+					&.callout {
+						&:before {
+							border:2px solid $orange;
+						}
+
+						a {
+							color:$orange;
+						}
+
+						&:hover {
+							&:before {
+								background: $orange;
+							}
+							
+							a {
+								color:#fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================
+	//                                                                                                 
+	//  ###    ###   #####   #####   ##  ##      #####        ###    ###  #####  ##     ##  ##   ##  
+	//  ## #  # ##  ##   ##  ##  ##  ##  ##      ##           ## #  # ##  ##     ####   ##  ##   ##  
+	//  ##  ##  ##  ##   ##  #####   ##  ##      #####        ##  ##  ##  #####  ##  ## ##  ##   ##  
+	//  ##      ##  ##   ##  ##  ##  ##  ##      ##           ##      ##  ##     ##    ###  ##   ##  
+	//  ##      ##   #####   #####   ##  ######  #####        ##      ##  #####  ##     ##   #####   
+	//                                                                                                 
+	//=================================================================================================
+	#mobile-nav {
+		background: rgba($purple, .95);
+
+		&:before {
+			color:#fff;
+		}
+
+		span.close {
+			color:#fff;
+		}
+
+		ul {
+			li {
+				a {
+					color:#fff;
+				}
+
+				&.active {
+					> a {
+						background: rgba(#fff, .25);
+					}
+				}
+			}	
+		}
+
+		nav {
+			border-bottom:2px solid rgba(#fff, .25);
+		}
+	}
+
+
+	//=====================================================
+	//                                                     
+	//  #####   #####    #####   ######  #####  #####    
+	//  ##     ##   ##  ##   ##    ##    ##     ##  ##   
+	//  #####  ##   ##  ##   ##    ##    #####  #####    
+	//  ##     ##   ##  ##   ##    ##    ##     ##  ##   
+	//  ##      #####    #####     ##    #####  ##   ##  
+	//                                                     
+	//=====================================================
+	#footer {
+		background:linear-gradient(90deg, $dark_blue, $purple);
+		color:#fff;
+		
+		&:before {
+			background:url('../images/ay-bg-logo1.png') no-repeat 90% -20%;
+		}
+
+		header {
+			a.logo {
+				display: block;
+				width:10rem;
+
+				@include resp(large) {
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				&:hover {
+					opacity:.5;
+				}
+			}
+		}
+
+		div.credits {
+			div.copyright {
+				nav.footer-navigation {
+					ul {
+						li {
+							a {
+								color:$orange;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================
+	//                                                                                 
+	//  ##   ##   #####   ###    ###  #####        ##   ##  #####  #####     #####   
+	//  ##   ##  ##   ##  ## #  # ##  ##           ##   ##  ##     ##  ##   ##   ##  
+	//  #######  ##   ##  ##  ##  ##  #####        #######  #####  #####    ##   ##  
+	//  ##   ##  ##   ##  ##      ##  ##           ##   ##  ##     ##  ##   ##   ##  
+	//  ##   ##   #####   ##      ##  #####        ##   ##  #####  ##   ##   #####   
+	//                                                                                 
+	//=================================================================================
+	#hero {
+		div.main-text {
+			$w: 5vw;
+			text-align: center;
+			padding-left: 0;
+			margin-left: auto;
+			margin-right: auto;
+			padding-top:$w;
+			padding-bottom:$w;
+
+			div.buttons {
+				color:#fff;
+
+				@include resp(large-up) {
+					margin-right: 0;
+				}
+
+				a {
+					&.link {
+						color:$orange;
+
+						&:before {
+							border-color: $orange;
+						}
+
+						&:hover {
+							color:#fff;
+						}
+					}
+				}
+			}
+		}
+
+		aside.promo-text {
+			border-top:2px solid $masthead_border_color;
+
+			a {
+				color:$orange;
+			}
+		}
+
+		+ section.content-block.featured-pages {
+			$offset: 12.5vw;
+			padding-top: 0;
+			margin-top: -$offset;
+			margin-bottom: $offset;
+			position: relative;
+			top: $offset*0.85;
+
+			div.pages {
+				width:90%;
+				margin-left: auto;
+				margin-right: auto;
+
+				@include resp(medium) {
+					width:100%;
+				}
+
+				a.page {
+					$m: 1%;
+					margin-left:$m;
+					margin-right:$m;
+					box-shadow: 0px 10px 15px -10px rgba( 0, 0, 15, .35 );
+
+					div.page-content {
+						border-radius: .5rem;
+						$pos: 1.5vw;
+
+						header {
+							position: relative;
+							z-index:10;
+							margin:$pos $pos 0 $pos;
+		
+							h4 {
+								//font-size: 3rem;
+		
+								@include resp(medium) {
+									font-size: 3rem;
+								}
+							}
+		
+							p {
+								opacity:.75;
+								//font-size: 1.5rem;
+							}
+						}
+		
+						footer {
+							left:$pos;
+							bottom:$pos;
+							font-size: 1.625rem;
+						}
+					}
+
+					&:hover {
+						box-shadow: 0px 15px 20px -10px rgba( 0, 0, 15, .2 );
+
+						div.page-content {
+							header {
+								p {
+									opacity:0;
+								}
+							}
+						}
+					}
+				}
+
+				&.has-2-pages {
+					a.page {
+						width: 48%;
+						
+						div.page-content {
+							padding-bottom: 100%;
+						}
+					}
+				}
+	
+				&.has-3-pages {
+					a.page {
+						width: 31.333%;
+						
+						div.page-content {
+							padding-bottom: 100%;
+						}
+					}
+				}
+	
+				&.has-4-pages {
+					a.page {
+						width: 23%;
+						
+						div.page-content {
+							padding-bottom: 100%;
+						}
+					}
+				}
+	
+				&.has-5-pages {
+					a.page {
+						width: 18%;
+						
+						div.page-content {
+							padding-bottom: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//==============================================================================
+	//                                                                              
+	//  #####     ###     ####    #####        ######  ##  ######  ##      #####  
+	//  ##  ##   ## ##   ##       ##             ##    ##    ##    ##      ##     
+	//  #####   ##   ##  ##  ###  #####          ##    ##    ##    ##      #####  
+	//  ##      #######  ##   ##  ##             ##    ##    ##    ##      ##     
+	//  ##      ##   ##   ####    #####          ##    ##    ##    ######  #####  
+	//                                                                              
+	//==============================================================================
+	#page-title {
+		nav.breadcrumbs {
+			color:#fff;
+
+			a {
+				color:#fff;
+
+				&:hover {
+					color:$orange;
+				}
+			}
+		}
+	}
+
+
+	//======================================================================================================================
+	//                                                                                                                      
+	//   ####   #####   ##     ##  ######  #####  ##     ##  ######        #####   ##       #####    ####  ##  ##   ####  
+	//  ##     ##   ##  ####   ##    ##    ##     ####   ##    ##          ##  ##  ##      ##   ##  ##     ## ##   ##     
+	//  ##     ##   ##  ##  ## ##    ##    #####  ##  ## ##    ##          #####   ##      ##   ##  ##     ####     ###   
+	//  ##     ##   ##  ##    ###    ##    ##     ##    ###    ##          ##  ##  ##      ##   ##  ##     ## ##      ##  
+	//   ####   #####   ##     ##    ##    #####  ##     ##    ##          #####   ######   #####    ####  ##  ##  ####   
+	//                                                                                                                      
+	//======================================================================================================================
+	section.content-block {
+		/**
+		 * Text and cards
+		 */
+		&.text-cards {
+			div.row {
+				div.cards {
+					article.card {
+						a.link {
+							&:hover {
+								color:$orange;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/**
+		 * Featured pages
+		 */
+		&.featured-pages {
+			div.pages {
+				a.page {
+					color:#fff;
+					
+					div.page-content {
+						background: $purple;
+					}
+
+					div.background-image {
+						background-color: $purple;
+					}
+
+					footer {
+						.link {
+							color:#fff;
+						}
+					}
+				}	
+			}
+		}
+
+		/**
+		 * Pricing table
+		 */
+		&.pricing-table {
+			$bg: #eff0f1;
+			//background: url('../images/ay-bg-logo1.png') no-repeat $bg;
+			//background-size: 35% auto;
+			//background-position: 90% 125%;
+			background: $bg;
+
+			div.plans {
+				article.plan {
+					background: #fff;
+					border:1px solid darken($bg, 6.5%);
+
+					header {
+						background: url('../images/pricing-pattern.png') darken($bg, 5%);
+						background-position: center center;
+
+						span.featured-label {
+							background: $purple;
+							color:#fff;
+						}
+						
+						h5 {
+							&:after {
+								color:$purple;
+							}
+						}
+					}
+
+					ul.features {
+						li {
+							i.icon {
+								&.yes {
+									color:$purple;
+								}
+							}
+						}
+					}
+					
+					.button {
+						
+					}
+
+					&.featured {
+						header {
+							background: url('../images/pricing-pattern-featured.png') $purple;
+							color:#111;
+
+							h5 {
+								&:after {
+									color:#fff;
+								}
+							}
+						}
+
+						ul.features {
+							li {
+								i.icon {
+									&.yes {
+										color:$orange;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/**
+		 * Image and text (could be slider)
+		 */
+		&.image-and-text {
+			nav.arrows {
+				i.icon {
+					color:$orange;
+					border:1px solid $orange;
+
+					&:hover {
+						color:$purple;
+						border-color:$purple;
+					}
+				}
+			}
+
+			div.slides {
+				article.slide {
+					div.slide-text {
+						background: #fff;
+
+						a {
+							&:hover {
+								color:$orange;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//======================================
+	//                                      
+	//  #####   ##       #####    ####    
+	//  ##  ##  ##      ##   ##  ##       
+	//  #####   ##      ##   ##  ##  ###  
+	//  ##  ##  ##      ##   ##  ##   ##  
+	//  #####   ######   #####    ####    
+	//                                      
+	//======================================
+	&.blog, &.single, &.archive {
+		article.post {
+			header {
+				h2.entry-title {
+					a {
+						&:hover {
+							color:$orange;
+						}
+					}
+				}
+			}
+
+			div.entry-summary {
+				p {
+					a.link {
+						&:hover {
+							color:$orange;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
